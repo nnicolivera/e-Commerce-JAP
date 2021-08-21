@@ -139,3 +139,45 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#inputEmail{
+  padding: 5px; 
+  width: 277px;
+  border-radius: 5px;
+  border-width: 0.05px;
+  border-color: #d6cecee3;
+}
+
+#inputPass{
+  padding: 5px; 
+  width: 277px;
+  border-radius: 5px;
+  border-width: 0.05px;
+  border-color: #d6cecee3;
+}
+
+#inputButton {
+  background-color: #259ada;
+  border-radius: 5px; 
+  border-color: #259ada;
+  color: #fff;
+  font-size: 18px; 
+  width: 200px;
+}
+
+.hr {
+  height: 5px; background-color: rgb(18, 24, 16);
+}
+
+.thumbnail {
+  float: left;
+  margin-right: 15px;
+}
+
+.texto {
+  width: 50%;
+  margin: 20px auto;
+  padding: 15px;
+  margin-top: 0%;
+}
+
