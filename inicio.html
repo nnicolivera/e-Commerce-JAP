@@ -8,8 +8,19 @@
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
 
+  <!-- ID OAuth -->
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- ID OAuth -->
+  
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -24,21 +35,14 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <div id="user" class="py-1 py-2 py-2" style="display: none;">
-        <input type="button" id="salir" class="inputButton" value="Cerrar sesión">
+        <!-- ID OAuth -->
+        <a href="index.html" onclick="signOut();">Sign out</a>
+        <!--<input type="button" id="salir" class="inputButton" value="Cerrar sesión">-->
       </div>
     </div>
   </nav>
 
-  <!-- ID OAuth -->
-  <a href="index.html" onclick="signOut();">Sign out</a>
-  <script>
-    function signOut() {
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        console.log('User signed out.');
-      });
-    }
-  </script>
+  
 
   <main role="main">
     <section class="jumbotron text-center">
