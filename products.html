@@ -7,6 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Productos</title>
+  <!-- ID OAuth -->
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
+  <!-- ID OAuth -->
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -23,15 +33,21 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div id="user" class="py-1 py-2" style="display: none;">
-        <input type="button" id="salir" class="inputButton" value="Cerrar sesión">
+      <div id="user" class="py-1 py-2 py-2" style="display: none;">
+
+        <!-- ID OAuth -->
+        <a href="index.html" onclick="signOut();">Sign out</a>
+        <!-- ID OAuth -->
+
+        <!--<input type="button" id="salir" class="inputButton" value="Cerrar sesión">-->
       </div>
     </div>
   </nav>
 
   <div class="filtros">
     <h4 class="container">Buscar:</h4>
-    <input id="buscador" type="search" placeholder="marca/modelo" class="form-control container filters" style="width: 100%;">
+    <input id="buscador" type="search" placeholder="marca/modelo" class="form-control container filters"
+      style="width: 100%;">
 
     <hr class="hr2">
 
