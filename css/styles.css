@@ -208,3 +208,7 @@ a.custom-card:hover {
 #user {
   color: white;
 }
+
+.signIn {
+  margin-left: 50%;
+}
