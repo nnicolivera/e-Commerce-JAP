@@ -1,9 +1,15 @@
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
-const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
-const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
+const PORDUCTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/products.json";
+const PRODUCT1_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product1.json";
+const PRODUCT2_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product2.json";
+const PRODUCT3_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product3.json";
+const PRODUCT4_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product4.json";
+const PRODUCT1_COMMENTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product1_comments.json";
+const PRODUCT2_COMMENTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product2_comments.json";
+const PRODUCT3_COMMENTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product3_comments.json";
+const PRODUCT4_COMMENTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product4_comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
@@ -56,13 +62,14 @@ document.addEventListener("DOMContentLoaded", function(e){
     user.innerHTML = userLogged.email + user.innerHTML;
 
     user.style = "display: inline-block";
+    
   }
 
   if(document.getElementById("salir")){
     document.getElementById("salir").addEventListener("click", function(){
       localStorage.removeItem("User-Logged");
       window.location = 'index.html';
-    })
+    });
   }
 
   

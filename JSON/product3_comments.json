@@ -1,0 +1,34 @@
+[
+	{
+        "id": "1",
+        "idProd": "3",
+        "score": 2,
+        "description": "No lo recomiendo, poco espacio!",
+        "user": "homero_lópez",
+        "dateTime": "2019-03-22 12:05:52"
+    },
+    {
+        "id": "2",
+        "idProd": "3",
+        "score": 1,
+        "description": "Quiero el reembolso! Le gasté la plata a mi abuela al pedo...",
+        "user": "maria_juana",
+        "dateTime": "2020-01-02 11:52:18"
+    },
+    {
+        "id": "3",
+        "idProd": "3",
+        "score": 2,
+        "description": "Malísimo, consume mucho y poco espacio.",
+        "user": "lalo_garza",
+        "dateTime": "2020-02-14 13:45:13"
+    },
+    {
+        "id": "4",
+        "idProd": "3",
+        "score": 3,
+        "description": "Puede estar mejor.",
+        "user": "mica_cabj",
+        "dateTime": "2020-02-03 15:33:22"
+    }
+]

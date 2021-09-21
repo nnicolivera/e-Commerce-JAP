@@ -3,11 +3,12 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
-  <!-- ID OAuth -->
+  <title>Información del producto</title>
+  <!-- ID OAuth 
   <script>
     function signOut() {
       var auth2 = gapi.auth2.getAuthInstance();
@@ -16,8 +17,9 @@
       });
     }
   </script>
-  <!-- ID OAuth -->
+   ID OAuth -->
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -35,25 +37,62 @@
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <div id="user" class="py-1 py-2 py-2" style="display: none;">
 
-        <!-- ID OAuth -->
+        <!-- ID OAuth 
         <a href="index.html" onclick="signOut();">Sign out</a>
-        <!-- ID OAuth -->
+         ID OAuth -->
 
-        <!--<input type="button" id="salir" class="inputButton" value="Cerrar sesión">-->
+        <input type="button" id="salir" class="inputButton" value="Cerrar sesión">
       </div>
     </div>
   </nav>
 
+  <!-- PASAR A UN DIV HECHO EN JS DENTRO DEL MODAL A IMPLEMENTAR -->
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega:
-        03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div>
+      <div id="content" class="productInfo"></div>
+      <div id="images" class="productImages"></div>
     </div>
   </div>
-  <footer class="text-muted">
+
+  <div class="textarea p-5">
+    <h4 style="float: left;">Publica una reseña:</h4><br>
+    <textarea id="addComment" name="reseña" cols="40" rows="4" placeholder="Escribe un comentario..."></textarea><br>
+
+    <div class="star-rating">
+      <input id="star-5" type="radio" name="rating" value="5" />
+      <label for="star-5" title="5 stars">
+        <i class="active fa fa-star"></i>
+      </label>
+
+      <input id="star-4" type="radio" name="rating" value="4" />
+      <label for="star-4" title="4 stars">
+        <i class="active fa fa-star"></i>
+      </label>
+
+      <input id="star-3" type="radio" name="rating" value="3" />
+      <label for="star-3" title="3 stars">
+        <i class="active fa fa-star"></i>
+      </label>
+
+      <input id="star-2" type="radio" name="rating" value="2" />
+      <label for="star-2" title="2 stars">
+        <i class="active fa fa-star"></i>
+      </label>
+
+      <input id="star-1" type="radio" name="rating" value="1" checked />
+      <label for="star-1" title="1 star">
+        <i class="active fa fa-star"></i>
+      </label>
+    </div><br>
+    <button type="button" class="btn btn-success">Hecho</button>
+  </div>
+
+  <div class="comments">
+    <p id="comments"></p>
+  </div>
+  <!-- PASAR A UN DIV HECHO EN JS DENTRO DEL MODAL A IMPLEMENTAR -->
+
+  <footer style="margin-top: 35%;" class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>

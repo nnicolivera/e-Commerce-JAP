@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
         
-    document.getElementById("inputButton").addEventListener("click", function(e){
+    document.getElementById("entrar").addEventListener("click", function(e){
         
         let inputEmail = document.getElementById("inputEmail");
         let inputPassword = document.getElementById("inputPass");

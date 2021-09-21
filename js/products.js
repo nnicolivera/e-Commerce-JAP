@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
 
-    getJSONData(PRODUCTS_URL).then(function (resultado) {
+    getJSONData(PORDUCTS_URL).then(function (resultado) {
         if (resultado.status === "ok") {
             autosLista = resultado.data;
 
@@ -75,22 +75,24 @@ function showAutos(autosLista) {
 
             if (buscar == undefined || auto.name.toLowerCase().includes(buscar)) {
 
-                datos += `<img src= "` + auto.imgSrc + `" width="25%" class="img-thumbnail thumbnail">`;
                 datos += `
-                <div class="texto container">
-                ` + "<strong>" + auto.name + "</strong>" + ` <br>
-                ` + auto.description + ` <br>
-                ` + auto.currency + ` ` + auto.cost + "." + ` <br><hr class="hr">
-                </div>
-                `
+                            <a href="product-info.html" onclick="productInfo(${auto.id})" style="text-decoration: none;">
+                                <img src= ${auto.imgSrc} width="25%" class="img-thumbnail thumbnail">
+                                <div class="texto list-group-item-action">
+                                    <strong> ${auto.name} </strong><br>
+                                     ${auto.description} <br>
+                                     ${auto.currency} ${auto.cost}. <br>
+                                </div><hr class="hr">
+                            </a>
+                        `
             }
-
-
         }
-
         document.getElementById("listado").innerHTML = datos;
-
     }
+}
+
+function productInfo(id) {
+    localStorage.setItem("auto", JSON.stringify({ autoID: id }));
 }
 
 document.getElementById("filtrar").addEventListener("click", function () {

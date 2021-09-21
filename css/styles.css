@@ -168,6 +168,7 @@ a.custom-card:hover {
 .hr {
   height: 2px; 
   background-color: rgb(18, 24, 16);
+  padding-left: 100ch;
 }
 
 .hr2{
@@ -193,10 +194,11 @@ a.custom-card:hover {
 }
 
 .texto {
-  width: 50%;
-  margin: 20px auto;
-  padding: 15px;
-  margin-top: -1.5%;
+ width: 88%;
+ padding-left: -100ch;
+ padding-bottom: 6.5ch;
+ margin-left: 12ch;
+ font-family: 'Raleway', serif;
 }
 
 .listaAutos {
@@ -212,3 +214,75 @@ a.custom-card:hover {
 .signIn {
   margin: 0 auto;
 }
+
+.comments {
+  background-color: rgba(189, 202, 131, 0);
+  margin-top: 2%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  float: left;
+  text-align: left;
+  font-family: 'Raleway', serif !important;
+}
+
+#addComment {
+  border-radius: 3%;
+  background-color: #e1e9db;
+}
+
+.textarea {
+  margin-top: -4%;
+  font-family: 'Raleway', serif !important;
+  float: left;
+}
+
+.checked {
+  color: orange;
+}
+
+.star-rating {  
+  margin-left: -5%;
+  direction: rtl;
+  display: inline-block;
+  padding: 20px
+}
+
+.star-rating input[type=radio] {
+  display: none
+}
+
+.star-rating label {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type=radio]:checked ~ label {
+  color: #ffbf00
+}
+
+
+/* MODAL PARA IMPLEMENTAR DESPUÉS
+  .ventanaInfo {
+  position: absolute;
+  position: fixed;
+  width: 60%;
+  padding: 15%;
+  background-color: rgba(148, 141, 141, 0.938);
+  color: black;
+  text-align: center;
+  margin-left: 23%;
+  margin-top: 5%;
+  display: none;
+}
+
+#cerrar {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  margin-top: 10px;
+  margin-right: 10px;
+} */
