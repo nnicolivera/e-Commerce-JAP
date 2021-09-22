@@ -257,6 +257,15 @@ a.custom-card:hover {
   color: #ffbf00
 }
 
+.terms1 {
+  font-size: small; 
+}
+
+.terms2 {
+  font-size: small;
+  margin-left: 2em;
+}
+
 
 
 /* MODAL PARA IMPLEMENTAR DESPUÉS
