@@ -136,10 +136,6 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
-.checked {
-  color: orange;
-}
-
 #inputEmail{
   padding: 5px; 
   width: 277px;
@@ -157,10 +153,7 @@ a.custom-card:hover {
 }
 
 .inputButton {
-  background-color: #259ada;
   border-radius: 5px; 
-  border-color: #259ada;
-  color: #fff;
   font-size: 15px; 
   width: 200px;
 }
@@ -263,6 +256,7 @@ a.custom-card:hover {
 .star-rating input[type=radio]:checked ~ label {
   color: #ffbf00
 }
+
 
 
 /* MODAL PARA IMPLEMENTAR DESPUÉS

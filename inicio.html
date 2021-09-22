@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-  
+
   <!-- ID OAuth 
   <script>
     function signOut() {
@@ -33,15 +33,19 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div id="user" class="py-1 py-2 py-2" style="display: none;">
-
-        <!-- ID OAuth 
-        <a href="index.html" onclick="signOut();">Sign out</a>
-         ID OAuth -->
-
-        <input type="button" id="salir" class="inputButton" value="Cerrar sesión">
+      <div id="userContainer" class="nav-item dropdown" style="display: none;">
+        <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false"></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="cart.html">Ver carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <div class="dropdown-divider"></div>
+          <a id="salir" class="dropdown-item" href="index.html">Cerrar sesión</a>
+        </div>
       </div>
+      <!-- ID OAuth 
+        <a href="index.html" onclick="signOut();">Sign out</a>
+      ID OAuth -->
     </div>
   </nav>
 
