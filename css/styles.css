@@ -220,7 +220,7 @@ a.custom-card:hover {
 
 #addComment {
   border-radius: 3%;
-  background-color: #e1e9db;
+  background-color: #ffffff;
 }
 
 .textarea {
@@ -257,11 +257,11 @@ a.custom-card:hover {
   color: #ffbf00
 }
 
-.terms1 {
+.terms {
   font-size: small; 
 }
 
-.terms2 {
+.ppolicy {
   font-size: small;
   margin-left: 2em;
 }

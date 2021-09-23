@@ -3,17 +3,13 @@
 <html lang="en">
 
 <head>
-  <meta name="google-site-verification" content="euagouydWxKJEW3lN_8MMWcyQnJwd3m_heqhDJG9dhs" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
 
-  <!-- ID OAuth 
-  <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id"
-    content="801182614848-fclhb3ime35fmiceppdeaa94c9ue5kqa.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-   ID OAuth -->
+  <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
 
   <title>Iniciar sesión</title>
 
@@ -55,26 +51,16 @@
       <hr class="hr">
       <h2><strong>Iniciar sesión</strong></h2>
 
-    <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
-      <div class="g-signin2 signIn" style="width: 200px; margin-left: 0 auto; margin-right: 0 auto;"
-        data-onsuccess="onSignIn" data-theme="dark"></div>
-      <script>
-        function onSignIn(googleUser) {
-          // Useful data for your client-side scripts:
-          var profile = googleUser.getBasicProfile();
-          console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-          console.log('Full Name: ' + profile.getName());
-          console.log('Given Name: ' + profile.getGivenName());
-          console.log('Family Name: ' + profile.getFamilyName());
-          console.log("Image URL: " + profile.getImageUrl());
-          console.log("Email: " + profile.getEmail());
+      <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
+      
+      <div id="g_id_onload" data-client_id="801182614848-fclhb3ime35fmiceppdeaa94c9ue5kqa.apps.googleusercontent.com"
+        data-login_uri="https://nnicolivera.github.io/e-Commerce-JAP/index.html" data-auto_prompt="false">
+      </div>
+      <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+        data-shape="rectangular" data-logo_alignment="left">
+      </div>
 
-          // The ID token you need to pass to your backend:
-          var id_token = googleUser.getAuthResponse().id_token;
-          console.log("ID Token: " + id_token);
-        }
-      </script>
-    <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
+      <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
 
       <br>
       <label for="inputEmail"></label>
