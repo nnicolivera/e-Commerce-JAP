@@ -136,6 +136,14 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
+.signIn {
+  margin: 0 auto;
+}
+
+#user {
+  color: white;
+}
+
 #inputEmail{
   padding: 5px; 
   width: 277px;
@@ -158,17 +166,6 @@ a.custom-card:hover {
   width: 200px;
 }
 
-.hr {
-  height: 2px; 
-  background-color: rgb(18, 24, 16);
-  padding-left: 100ch;
-}
-
-.hr2{
-  height: 1px; 
-  background-color: rgb(18, 24, 16);
-}
-
 .filtros {
   float: left;
   margin-top: 4%;
@@ -179,6 +176,29 @@ a.custom-card:hover {
   border-width: 0.01cm;
   border-style: dotted;
   padding: 3%;
+}
+
+.hr {
+  height: 2px; 
+  background-color: rgb(18, 24, 16);
+  padding-left: 100ch;
+}
+
+.hr2 {
+  height: 1px; 
+  background-color: rgb(18, 24, 16);
+}
+
+.hr3 {
+  height: 2px;
+  background-color: black;
+  width: 100%;
+}
+
+.listaAutos {
+  margin-top: 4%; 
+  margin-left: 7%; 
+  float: left
 }
 
 .thumbnail {
@@ -194,38 +214,33 @@ a.custom-card:hover {
  font-family: 'Raleway', serif;
 }
 
-.listaAutos {
-  margin-top: 4%; 
-  margin-left: 7%; 
-  float: left
+.productImages {
+  float: left;
 }
 
-#user {
-  color: white;
-}
-
-.signIn {
-  margin: 0 auto;
+.relatedProducts {
+  float: right;
 }
 
 .comments {
   background-color: rgba(189, 202, 131, 0);
-  margin-top: 2%;
-  margin-right: 10%;
-  margin-bottom: 5%;
-  float: left;
-  text-align: left;
+  position: absolute;
+  left: 30em;
+  top: 45em;
+  float: right;
   font-family: 'Raleway', serif !important;
 }
 
-#addComment {
-  border-radius: 3%;
+#comments {
+  float: left;
+}
+
+#textarea {
+  border-radius: 2%;
   background-color: #ffffff;
 }
 
-.textarea {
-  margin-top: -4%;
-  font-family: 'Raleway', serif !important;
+.addComment {
   float: left;
 }
 
@@ -234,7 +249,6 @@ a.custom-card:hover {
 }
 
 .star-rating {  
-  margin-left: -5%;
   direction: rtl;
   display: inline-block;
   padding: 20px
@@ -257,6 +271,21 @@ a.custom-card:hover {
   color: #ffbf00
 }
 
+.img-carousel {
+  width: 580px;
+  height: 330px;
+  border-color: rgb(255, 255, 255);
+  border-width: 5px;
+  border-style: double;
+  border-radius: 5px;
+}
+
+.img-related {
+  float: left;
+  width: 120px;
+  height: 80px;
+}
+
 .terms {
   font-size: small; 
 }
@@ -266,26 +295,28 @@ a.custom-card:hover {
   margin-left: 2em;
 }
 
-
-
-/* MODAL PARA IMPLEMENTAR DESPUÉS
-  .ventanaInfo {
-  position: absolute;
-  position: fixed;
-  width: 60%;
-  padding: 15%;
-  background-color: rgba(148, 141, 141, 0.938);
-  color: black;
-  text-align: center;
-  margin-left: 23%;
-  margin-top: 5%;
-  display: none;
+.mt-end {
+  margin-top: 50%;
 }
 
-#cerrar {
-  position: absolute;
-  right: 1px;
-  top: 1px;
-  margin-top: 10px;
-  margin-right: 10px;
-} */
+.no-deco {
+  text-decoration: none !important;
+}
+
+.sombra {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.links {
+  text-decoration: none !important;
+  opacity: 0.5;
+}
+
+/* BORDE GRILLA */
+.borde {
+  background-color: #94e794e0;
+  border-color: rgb(25, 85, 13); 
+  border-width: 3px; 
+  height: 50%;
+  border-style: dotted;
+}

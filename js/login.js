@@ -27,19 +27,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
     })
 });
 
-//INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
-function handleCredentialResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-}
-window.onload = function () {
-    google.accounts.id.initialize({
-        client_id: "801182614848-fclhb3ime35fmiceppdeaa94c9ue5kqa.apps.googleusercontent.com",
-        callback: handleCredentialResponse
-    });
-    google.accounts.id.renderButton(
-        document.getElementById("buttonDiv"),
-        { theme: "outline", size: "large" }  // customization attributes
-    );
-    google.accounts.id.prompt(); // also display the One Tap dialog
-}
-//INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
+// INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
+// function handleCredentialResponse(response) {
+//     console.log("Encoded JWT ID token: " + response.credential);
+// }
+// window.onload = function () {
+//     google.accounts.id.initialize({
+//         client_id: "801182614848-fclhb3ime35fmiceppdeaa94c9ue5kqa.apps.googleusercontent.com",
+//         callback: handleCredentialResponse
+//     });
+//     google.accounts.id.renderButton(
+//         document.getElementById("buttonDiv"),
+//         { theme: "outline", size: "large" }  // customization attributes
+//     );
+//     google.accounts.id.prompt(); // also display the One Tap dialog
+// }
+// INICIAR SESIÓN CON GOOGLE (EN PROGRESO)

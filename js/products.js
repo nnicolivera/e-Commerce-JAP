@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
 
-    getJSONData(PORDUCTS_URL).then(function (resultado) {
+    getJSONData(PRODUCTS_URL).then(function (resultado) {
         if (resultado.status === "ok") {
             autosLista = resultado.data;
 

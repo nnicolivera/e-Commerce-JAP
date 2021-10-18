@@ -1,7 +1,7 @@
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PORDUCTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/products.json";
+const PRODUCTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/products.json";
 const PRODUCT1_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product1.json";
 const PRODUCT2_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product2.json";
 const PRODUCT3_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product3.json";
@@ -11,6 +11,7 @@ const PRODUCT2_COMMENTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/pro
 const PRODUCT3_COMMENTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product3_comments.json";
 const PRODUCT4_COMMENTS_URL = "https://nnicolivera.github.io/JSON-e-Commerce/product4_comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
+const CART_INFO2_URL = "https://japdevdep.github.io/ecommerce-api/cart/654.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
 var showSpinner = function () {

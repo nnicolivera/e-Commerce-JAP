@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>Información del producto</title>
+  <title>eMercado - Información del producto</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="site-header sticky-top py-1 bg-dark sombra">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
@@ -37,17 +37,21 @@
     </div>
   </nav>
 
-  <!-- PASAR A UN DIV HECHO EN JS DENTRO DEL MODAL A IMPLEMENTAR -->
   <div class="container p-5">
     <div>
       <div id="content" class="productInfo"></div>
       <div id="images" class="productImages"></div>
+      <div class="relatedProducts">
+        <h4>Productos relacionados</h4><br>
+        <div id="relatedProducts"></div>
+        <a href="products.html" style="color: blue;">Volver a la lista</a>
+      </div>
     </div>
   </div>
 
-  <div class="textarea p-5">
-    <h4 style="float: left;">Publica una reseña:</h4><br>
-    <textarea id="addComment" name="reseña" cols="40" rows="4" placeholder="Escribe un comentario..."></textarea><br>
+  <div class="addComment container ml-4 mt-4"><br>
+    <h4>Publica una reseña:</h4>
+    <textarea id="textarea" name="reseña" cols="40" rows="4" placeholder="Escribe un comentario..."></textarea><br>
 
     <div class="star-rating">
       <input id="star-5" type="radio" name="rating" value="5" />
@@ -79,18 +83,18 @@
   </div>
 
   <div class="comments">
-    <p id="comments"></p>
+    <div id="comments"></div>
   </div>
-  <!-- PASAR A UN DIV HECHO EN JS DENTRO DEL MODAL A IMPLEMENTAR -->
 
-  <footer style="margin-top: 35%;" class="text-muted">
+  <footer style="margin-top: 60%;" class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
       </p>
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-      <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy" href="ppolicy.html" target="_blank">Privacy policy</a></p>
+      <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy"
+          href="ppolicy.html" target="_blank">Privacy policy</a></p>
     </div>
   </footer>
   <div id="spinner-wrapper">
