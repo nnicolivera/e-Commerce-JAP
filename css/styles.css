@@ -167,21 +167,15 @@ a.custom-card:hover {
 }
 
 .filtros {
-  float: left;
-  margin-top: 4%;
-  margin-left: 2%;
-  background: radial-gradient(circle, rgba(174, 238, 179, 0.493) 0%, rgba(227, 233, 148, 0.644) 150%);
-  border-color:black;
-  border-radius: 0.2cm;
-  border-width: 0.01cm;
-  border-style: dotted;
-  padding: 3%;
+  background: radial-gradient(circle, rgba(174, 238, 179, 0.726) 0%, rgba(200, 209, 96, 0.418) 150%);
+  border-color:rgba(0, 0, 0, 0.822);
+  border-radius: 10px;
+  border-width: 20px;
 }
 
 .hr {
   height: 2px; 
   background-color: rgb(18, 24, 16);
-  padding-left: 100ch;
 }
 
 .hr2 {
@@ -195,22 +189,13 @@ a.custom-card:hover {
   width: 100%;
 }
 
-.listaAutos {
-  margin-top: 4%; 
-  margin-left: 7%; 
-  float: left
-}
-
 .thumbnail {
   float: left;
   margin-right: 15px;
 }
 
 .texto {
- width: 88%;
- padding-left: -100ch;
- padding-bottom: 6.5ch;
- margin-left: 12ch;
+  float: right;
  font-family: 'Raleway', serif;
 }
 
@@ -312,11 +297,16 @@ a.custom-card:hover {
   opacity: 0.5;
 }
 
-/* BORDE GRILLA */
-.borde {
+.borde-ticket {
   background-color: #94e794e0;
   border-color: rgb(25, 85, 13); 
   border-width: 3px; 
   height: 50%;
   border-style: dotted;
+}
+
+.borde-grilla {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
 }

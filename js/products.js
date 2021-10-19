@@ -76,14 +76,16 @@ function showAutos(autosLista) {
             if (buscar == undefined || auto.name.toLowerCase().includes(buscar)) {
 
                 datos += `
-                            <a href="product-info.html" onclick="productInfo(${auto.id})" style="text-decoration: none;">
+                            <a href="product-info.html" onclick="productInfo(${auto.id})" class="no-deco">
                                 <img src= ${auto.imgSrc} width="25%" class="img-thumbnail thumbnail">
-                                <div class="texto list-group-item-action">
-                                    <strong> ${auto.name} </strong><br>
-                                     ${auto.description} <br>
-                                     ${auto.currency} ${auto.cost}. <br>
-                                </div><hr class="hr">
+                                <div class="list-group-item-action">
+                                    <div style="float: left;"><strong>${auto.name}</strong></div> <div style="float: right;"><small>${auto.currency} ${auto.cost}.</small></div>
+                                    <br>
+                                    ${auto.description} 
+                                    <br><br>
+                                </div>
                             </a>
+                            <hr class="hr">
                         `
             }
         }
