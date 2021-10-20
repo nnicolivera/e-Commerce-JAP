@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 let auto = result.data;
                 if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
                     comments.forEach(comments => {
-                        showAuto(auto, comments);
+                        showAutoInfo(auto, comments);
                     });
                 }
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 let auto = result.data;
                 if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
                     comments.forEach(comments => {
-                        showAuto(auto, comments);
+                        showAutoInfo(auto, comments);
                     });
                 }
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 let auto = result.data;
                 if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
                     comments.forEach(comments => {
-                        showAuto(auto, comments);
+                        showAutoInfo(auto, comments);
                     });
                 }
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 let auto = result.data;
                 if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
                     comments.forEach(comments => {
-                        showAuto(auto, comments);
+                        showAutoInfo(auto, comments);
                     });
                 }
 
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 
-function showAuto(auto, comm) {
+function showAutoInfo(auto, comm) {
 
     let info = "";
     let imgs = "";
