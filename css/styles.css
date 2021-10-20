@@ -167,7 +167,7 @@ a.custom-card:hover {
 }
 
 .filtros {
-  background: radial-gradient(circle, rgba(174, 238, 179, 0.726) 0%, rgba(200, 209, 96, 0.418) 150%);
+  background: radial-gradient(circle, rgba(174, 238, 179, 0.493) 0%, rgba(199, 211, 39, 0.644) 150%);
   border-color:rgba(0, 0, 0, 0.822);
   border-radius: 10px;
   border-width: 20px;
@@ -199,34 +199,11 @@ a.custom-card:hover {
  font-family: 'Raleway', serif;
 }
 
-.productImages {
-  float: left;
-}
-
-.relatedProducts {
+.img-related {
   float: right;
-}
-
-.comments {
-  background-color: rgba(189, 202, 131, 0);
-  position: absolute;
-  left: 30em;
-  top: 45em;
-  float: right;
-  font-family: 'Raleway', serif !important;
-}
-
-#comments {
-  float: left;
-}
-
-#textarea {
-  border-radius: 2%;
-  background-color: #ffffff;
-}
-
-.addComment {
-  float: left;
+  margin-left: 20px;
+  width: 120px;
+  height: 80px;
 }
 
 .checked {
@@ -256,21 +233,6 @@ a.custom-card:hover {
   color: #ffbf00
 }
 
-.img-carousel {
-  width: 580px;
-  height: 330px;
-  border-color: rgb(255, 255, 255);
-  border-width: 5px;
-  border-style: double;
-  border-radius: 5px;
-}
-
-.img-related {
-  float: left;
-  width: 120px;
-  height: 80px;
-}
-
 .terms {
   font-size: small; 
 }
@@ -278,10 +240,6 @@ a.custom-card:hover {
 .ppolicy {
   font-size: small;
   margin-left: 2em;
-}
-
-.mt-end {
-  margin-top: 50%;
 }
 
 .no-deco {

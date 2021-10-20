@@ -129,60 +129,66 @@ function showAuto(auto, comm) {
     let fiv = document.getElementById("5star");
 
     info += ` 
-                <div style="float: left;">
-                    <h2 style="color: white;float: left;"><strong>${auto.name}</strong></h2>
-                    <h4>${auto.currency} ${auto.cost}</h4>
+                <div class="col-12 col-md-8">
+                    <h2 style="color: white;"><strong>${auto.name}</strong></h2>
                 </div>
-                <div style="float: right;">
-                    <h6 style="color: black; float: left; margin-left: 570px;">${auto.soldCount} unidades vendidas</h6>
+                <div class="col-5 col-md-4 text-right">
+                    <small class="d-none d-md-block" style="color: black;">${auto.soldCount} unidades vendidas</small>
                 </div>
-                <br><br>
-                <p style="margin-top: 5%;">${auto.description_long}</p><br>
-            `;
+                <div class="col-12 col-md-12">
+                    <h4 style="color: white;">${auto.currency} ${auto.cost}</h4>
+                </div>
+                &nbsp;
+                <div class="col col-md-12">
+                    <p>${auto.description_long}</p>
+                </div>     
+            `
 
     imgs += `   
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="img-carousel" src="img/prod${auto.id}.jpg" alt="...">
+                
+                    <div id="carouselExampleIndicators" class="carousel img-thumbnail slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="img-fluid" src="img/prod${auto.id}.jpg" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="img-fluid" src="img/prod${auto.id}_1.jpg" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="img-fluid" src="img/prod${auto.id}_2.jpg" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="img-fluid" src="img/prod${auto.id}_3.jpg" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="img-fluid" src="img/prod${auto.id}_4.jpg" alt="...">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img class="img-carousel" src="img/prod${auto.id}_1.jpg" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-carousel" src="img/prod${auto.id}_2.jpg" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-carousel" src="img/prod${auto.id}_3.jpg" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-carousel" src="img/prod${auto.id}_4.jpg" alt="...">
-                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
             `;
 
     comments += `
+                    <br>
                     <div style="float: left;">
                         <strong>${comm.user}</strong>: ${comm.description}
                     </div>
 
-                    <div style="float: right; margin-right: -5%;">
+                    <div style="float: right;">
                         <span id="1star" class="fa fa-star"></span>
                         <span id="2star" class="fa fa-star"></span>
                         <span id="3star" class="fa fa-star"></span>
@@ -191,8 +197,7 @@ function showAuto(auto, comm) {
                     </div>
                     <br>
                     <strong>Rating: </strong>${comm.score}/5.
-                    <br>
-                    <br>
+                    <br>           
                 `;
     /*
          if (comm.score == 1) {
@@ -233,20 +238,23 @@ function showAuto(auto, comm) {
 
 function showRelatedProducts(autos, autosRelacionados) {
 
-    let contenido = "";
+    let contenido = `   <h4>Productos relacionados</h4> 
+                        <br>
+                    `
 
     autosRelacionados.forEach(function (indice) {
 
-        contenido += `
-                        <a href="#" onclick="relatedProductInfo(${autos[indice].id})">
-                            <img class="img-related" src="img/prod${autos[indice].id}.jpg" alt="...">
-                            <div style="float: left;" class="ml-3">
-                                <strong> ${autos[indice].name} </strong><br>
-                                ${autos[indice].currency} ${autos[indice].cost} <br><br><br>
-                            </div>
-                        </a>
-                        <br><br>
-                    `;
+        contenido +=`
+                        <a href="#" class="no-deco" onclick="relatedProductInfo(${autos[indice].id})">
+                        <img class="img-related" src="img/prod${autos[indice].id}.jpg" alt="...">
+                        <div>
+                            <strong> ${autos[indice].name} </strong>
+                            <br>
+                            ${autos[indice].currency} ${autos[indice].cost} 
+                            <br><br><br>
+                        </div>
+                        </a> 
+                    `
     });
 
     document.getElementById("relatedProducts").innerHTML = contenido;
