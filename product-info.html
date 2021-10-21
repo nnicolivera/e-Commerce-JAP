@@ -37,18 +37,18 @@
     </div>
   </nav>
 
-  <div class="container pb-5">
+  <main role="main" class="pb-5">
     <div class="text-center p-4">
       <h2>Información del producto</h2>
       <p class="lead">Verás aquí la información detallada del producto.</p>
     </div>
-    <a href="products.html">
-      <img src="img/arrow-return-left.svg" alt="..." width="30px">
-    </a>
-    <br><br>
-      <div id="content" class="row">
-        
-      </div>
+
+    <div class="container">
+      <a href="products.html">
+        <img src="img/arrow-return-left.svg" alt="..." width="30px">
+      </a>
+      <br><br>
+      <div id="content" class="row"></div>
 
       <br>
 
@@ -57,7 +57,7 @@
 
         </div>
         <div id="relatedProducts" class="d-none d-md-block col-md-5 text-right">
-          
+
         </div>
       </div>
       <br>
@@ -66,29 +66,30 @@
           <h4>Opiniones sobre el producto</h4>
           <div class="form-group">
             <label for="textarea"></label>
-            <textarea id="textarea" class="form-control" name="reseña" rows="3" placeholder="Escribe un comentario..."></textarea>
+            <textarea id="textarea" class="form-control" name="reseña" rows="3"
+              placeholder="Escribe un comentario..."></textarea>
           </div>
           <div class="star-rating">
             <input id="star-5" type="radio" name="rating" value="5" />
             <label for="star-5" title="5 stars">
               <i class="active fa fa-star"></i>
             </label>
-      
+
             <input id="star-4" type="radio" name="rating" value="4" />
             <label for="star-4" title="4 stars">
               <i class="active fa fa-star"></i>
             </label>
-      
+
             <input id="star-3" type="radio" name="rating" value="3" />
             <label for="star-3" title="3 stars">
               <i class="active fa fa-star"></i>
             </label>
-      
+
             <input id="star-2" type="radio" name="rating" value="2" />
             <label for="star-2" title="2 stars">
               <i class="active fa fa-star"></i>
             </label>
-      
+
             <input id="star-1" type="radio" name="rating" value="1" checked />
             <label for="star-1" title="1 star">
               <i class="active fa fa-star"></i>
@@ -97,24 +98,25 @@
           <br>
           <button type="button" class="btn btn-success">Enviar</button>
         </div>
-        
+
         <div id="comments" class="col-12 col-md-8">
           <h4>&nbsp;</h4>
         </div>
       </div>
     </div>
+  </main>
 
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-        <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy"
-            href="ppolicy.html" target="_blank"> Privacy policy</a></p>
-      </div>
-    </footer>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy"
+          href="ppolicy.html" target="_blank"> Privacy policy</a></p>
+    </div>
+  </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

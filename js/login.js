@@ -1,13 +1,13 @@
+let inputEmail = document.getElementById("inputEmail");
+let inputPassword = document.getElementById("inputPass");
+let camposCompletos = true;
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("entrar").addEventListener("click", function (e) {
-
-        let inputEmail = document.getElementById("inputEmail");
-        let inputPassword = document.getElementById("inputPass");
-        let camposCompletos = true;
 
         if (inputEmail.value === "") {
             camposCompletos = false;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         if (camposCompletos) {
             window.location = "inicio.html";
-            localStorage.setItem('User-Logged', JSON.stringify({ email: inputEmail.value }));
+            localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
         }
 
     })

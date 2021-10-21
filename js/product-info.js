@@ -145,42 +145,41 @@ function showAutoInfo(auto, comm) {
             `
 
     imgs += `   
-                
-                    <div id="carouselExampleIndicators" class="carousel img-thumbnail slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="img-fluid" src="img/prod${auto.id}.jpg" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="img/prod${auto.id}_1.jpg" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="img/prod${auto.id}_2.jpg" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="img/prod${auto.id}_3.jpg" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="img-fluid" src="img/prod${auto.id}_4.jpg" alt="...">
-                            </div>
+                <div id="carouselExampleIndicators" class="carousel img-thumbnail slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="img-fluid" src="img/prod${auto.id}.jpg" alt="...">
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="img/prod${auto.id}_1.jpg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="img/prod${auto.id}_2.jpg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="img/prod${auto.id}_3.jpg" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="img-fluid" src="img/prod${auto.id}_4.jpg" alt="...">
+                        </div>
                     </div>
-            `;
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>         
+            `
 
     comments += `
                     <br>
@@ -245,14 +244,14 @@ function showRelatedProducts(autos, autosRelacionados) {
     autosRelacionados.forEach(function (indice) {
 
         contenido +=`
-                        <a href="#" class="no-deco" onclick="relatedProductInfo(${autos[indice].id})">
-                        <img class="img-related" src="img/prod${autos[indice].id}.jpg" alt="...">
-                        <div>
-                            <strong> ${autos[indice].name} </strong>
-                            <br>
-                            ${autos[indice].currency} ${autos[indice].cost} 
-                            <br><br><br>
-                        </div>
+                        <a href="#" class="no-deco" style="padding-right: -250px" onclick="relatedProductInfo(${autos[indice].id})">
+                            <img class="img-related" src="img/prod${autos[indice].id}.jpg" alt="...">
+                            <div>
+                                <strong> ${autos[indice].name} </strong>
+                                <br>
+                                ${autos[indice].currency} ${autos[indice].cost} 
+                                <br><br><br>
+                            </div>
                         </a> 
                     `
     });

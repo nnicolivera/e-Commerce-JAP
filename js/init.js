@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     userLogged = JSON.parse(userLogged);
 
-    user.innerHTML = "Hola, " + userLogged.email + user.innerHTML;
+    user.innerHTML = "Hola, " + userLogged.value;
 
     user.style = "display: inline-block";
 

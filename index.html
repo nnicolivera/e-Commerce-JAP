@@ -7,79 +7,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
 
-  <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
+  <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
+  INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
 
-  <title>Iniciar sesión</title>
+  <title>E-Mercado Iniciar sesión</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+
   <style>
-    html,
     body {
-      height: 100%;
-    }
-
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background: url("img/login_background.jpg");
-    }
-
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
+      background-image: url(img/mountain.jpg) !important;
+      background-size: cover !important;
     }
   </style>
+
 </head>
 
-<body class="text-center">
-  <div class="container p-5">
-    <div style="position: relative; width:auto; top: 0;">
-      <img src="img/login.png" alt="Login"><br><br>
+<body>
+  <main role="main" class="p-3">
+    <div class="text-center p-2 sombra" style="border-radius: 10px;">
+      <h1><strong>Bienvenido a E-Mercado</strong></h1>
+      <p class="lead">Por favor, inicia sesión.</p>
+    </div>
 
-      <hr class="hr">
-      <h2><strong>Iniciar sesión</strong></h2>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+
+        </div>
+        
+        <!-- EL FORM ESTÁ SIN USO, HAY QUE APLICARLE LAS CLASES DE VALIDACIONES -->
+        <div class="col-10 col-md-5 text-center">
+          <div class="card-block special-card card-blurry sombra mt-5 p-3">
+            <img src="img/login.png" alt="Login">
+            <hr class="hr sombra">
+            <form class="needs-validation" novalidate>
+              <label for="inputEmail"><strong>Correo electrónico</strong></label><br>
+              <input type="email" class="form-control sombra" id="inputEmail" required>
+              <div class="invalid-feedback">
+                Correo electrónico incorrecto y/o faltan campos.
+              </div>
+              <br>
+              <label for="inputPass"><strong>Contraseña</strong></label><br>
+              <input type="password" class="form-control sombra" id="inputPass" required>
+              <div class="invalid-feedback">
+                Contraseña incorrecta y/o faltan campos.
+              </div>
+              <br>
+            </form>
+            <button id="entrar" type="submit" class="btn btn-primary w-login-btn sombra">Ingresar</button>
+            <br>
+          </div>
+        </div>
+
+        <div class="col">
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <br><br><br>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy"
+          href="ppolicy.html" target="_blank"> Privacy policy</a></p>
+    </div>
+  </footer>
+
+  <!-- <div class="container p-5">
+    <div>
+      <!-- <label for="inputEmail"></label>
+      <input type="email" id="inputEmail" placeholder="Correo electrónico" autofocus>  
+      <!-- <label for="inputPass"></label>
+      <input type="password" id="inputPass" placeholder="Contraseña"> 
 
       <!-- INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
-      
       <div id="g_id_onload" data-client_id="801182614848-fclhb3ime35fmiceppdeaa94c9ue5kqa.apps.googleusercontent.com"
         data-login_uri="https://nnicolivera.github.io/e-Commerce-JAP/index.html" data-auto_prompt="false">
       </div>
       <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
         data-shape="rectangular" data-logo_alignment="left">
       </div>
-
-     INICIAR SESIÓN CON GOOGLE (EN PROGRESO)-->
-
-      <br>
-      <label for="inputEmail"></label>
-      <input type="email" id="inputEmail" placeholder="Correo electrónico" autofocus>
-      <br>
-      <label for="inputPass"></label>
-      <input type="password" id="inputPass" placeholder="Contraseña">
-      <br>
-      <br>
-      <button id="entrar" class="btn btn-primary inputButton">Ingresar</button>
-      <br>
-      <br>
-      <input type="checkbox" id="inputCheck"><strong> Recordarme</strong>
-
-      <hr class="hr">
-
+     INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
     </div>
-  </div>
-
+  </div>-->
+  
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>

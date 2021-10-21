@@ -136,34 +136,34 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
+/* LOGIN */
+
+/* google 
+
 .signIn {
   margin: 0 auto;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+}
+*/
+
+.card-blurry {
+  background-color: rgba(245, 245, 245, 0.4);
+  border-radius: 10px;
+}
+
+.w-login {
+  width: 70%;
+  border-radius: 5px;
+}
+
+.w-login-btn {
+  width: 150px;
 }
 
 #user {
   color: white;
-}
-
-#inputEmail{
-  padding: 5px; 
-  width: 277px;
-  border-radius: 5px;
-  border-width: 0.05px;
-  border-color: #d6cecee3;
-}
-
-#inputPass{
-  padding: 5px; 
-  width: 277px;
-  border-radius: 5px;
-  border-width: 0.05px;
-  border-color: #d6cecee3;
-}
-
-.inputButton {
-  border-radius: 5px; 
-  font-size: 15px; 
-  width: 200px;
 }
 
 .filtros {
@@ -173,30 +173,9 @@ a.custom-card:hover {
   border-width: 20px;
 }
 
-.hr {
-  height: 2px; 
-  background-color: rgb(18, 24, 16);
-}
-
-.hr2 {
-  height: 1px; 
-  background-color: rgb(18, 24, 16);
-}
-
-.hr3 {
-  height: 2px;
-  background-color: black;
-  width: 100%;
-}
-
 .thumbnail {
   float: left;
   margin-right: 15px;
-}
-
-.texto {
-  float: right;
- font-family: 'Raleway', serif;
 }
 
 .img-related {
@@ -233,15 +212,7 @@ a.custom-card:hover {
   color: #ffbf00
 }
 
-.terms {
-  font-size: small; 
-}
-
-.ppolicy {
-  font-size: small;
-  margin-left: 2em;
-}
-
+/* cart */
 .no-deco {
   text-decoration: none !important;
 }
@@ -255,7 +226,7 @@ a.custom-card:hover {
   opacity: 0.5;
 }
 
-.borde-ticket {
+.ticket {
   background-color: #94e794e0;
   border-color: rgb(25, 85, 13); 
   border-width: 3px; 
@@ -263,8 +234,65 @@ a.custom-card:hover {
   border-style: dotted;
 }
 
-.borde-grilla {
+/* my profile */
+.avatar {
+  border-radius: 50%;
+}
+
+.upload-image {
+  float: right;
+  margin-right: 50px;
+}
+
+.upload-image > input {
+  display: none;
+}
+
+.img {
+  width: 50px;
+  cursor: pointer;
+}
+
+.bg-back {
+  background-color: rgba(217, 218, 216, 0.707);
+}
+
+.inputN-no-i {
+  -webkit-appearance: textfield !important;
+  margin: 0;
+  -moz-appearance:textfield !important;
+}
+
+/* terms & policy */
+.terms {
+  font-size: small; 
+}
+
+.ppolicy {
+  font-size: small;
+  margin-left: 2em;
+}
+
+/* global */
+.borde {
   border-color: black;
   border-width: 1px;
   border-style: solid;
+}
+
+.hr {
+  height: 2px; 
+  background-color: rgb(18, 24, 16);
+  width: 100%;
+}
+
+.hr2 {
+  height: 1px; 
+  background-color: rgb(18, 24, 16);
+}
+
+.hr3 {
+  height: 2px;
+  background-color: black;
+  width: 100%;
 }

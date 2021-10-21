@@ -35,52 +35,54 @@
     </div>
   </nav>
 
-  <div class="container pb-5">
+  <main role="main" class="pb-5">
     <div class="text-center p-4">
       <h2>Productos</h2>
       <p class="lead">Verás aquí todos los productos del sitio.</p>
     </div>
-    <div class="row">
-      <div class="col-12 col-md-4">
-        <div class="filtros p-4 sombra">
-          <h4 class="text-center">Buscar:</h4>
-          <input id="buscador" type="search" placeholder="marca/modelo" class="form-control filters">
 
-          <hr class="hr2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <div class="filtros p-4 sombra">
+            <h4 class="text-center">Buscar:</h4>
+            <input id="buscador" type="search" placeholder="marca/modelo" class="form-control filters">
 
-          <div id="filtrar">
-            <h4 class="text-center">Rango de precio:</h4>
-            <input type="number" class="form-control" id="min" placeholder="desde:">
-            <input type="number" class="form-control" id="max" placeholder="hasta:">
-            <br>
-            <div class="text-center">
-              <input type="button" id="filtrar" class="btn-light btn btn-group" style="width: 100px;" value="Filtrar">
-              <input type="button" id="limpiar" class="btn-light btn btn-group" style="width: 100px;" value="Limpiar">
+            <hr class="hr2">
+
+            <div id="filtrar">
+              <h4 class="text-center">Rango de precio:</h4>
+              <input type="number" class="form-control" id="min" placeholder="desde:">
+              <input type="number" class="form-control" id="max" placeholder="hasta:">
+              <br>
+              <div class="text-center">
+                <input type="button" id="filtrar" class="btn-light btn btn-group" style="width: 100px;" value="Filtrar">
+                <input type="button" id="limpiar" class="btn-light btn btn-group" style="width: 100px;" value="Limpiar">
+              </div>
             </div>
-          </div>
-
-          <hr class="hr2">
-
-          <div id="ordenar">
-            <h4 class="text-center">Ordenar por:</h4>
-            <div class="text-center">
-              <a class="no-deco" href="javascript:costAsc()">Menor precio</a><br>
-              <a class="no-deco" href="javascript:costDesc()">Mayor precio</a><br>
-              <a class="no-deco" href="javascript:soldCount()">Más relevantes</a>
+            <hr class="hr2">
+            <div id="ordenar">
+              <h4 class="text-center">Ordenar por:</h4>
+              <div class="text-center">
+                <a class="no-deco" href="javascript:costAsc()">Menor precio</a><br>
+                <a class="no-deco" href="javascript:costDesc()">Mayor precio</a><br>
+                <a class="no-deco" href="javascript:soldCount()">Más relevantes</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      &nbsp;
-      <div id="listado" class="col-12 col-md-6">
 
-      </div>
-      <div class="col col-md">
+        &nbsp;
+
+        <div id="listado" class="col-12 col-md-6"></div>
+
+        <div class="col col-md"></div>
+
       </div>
     </div>
-  </div>  
+  </main>
 
-    <!-- MODAL PARA IMPLEMENTAR DESPUÉS 
+  <!-- MODAL PARA IMPLEMENTAR DESPUÉS 
 
   <div class="ventanaInfo" id="vent">
     <div id="cerrar">
@@ -88,29 +90,29 @@
     </div>
   </div>  -->
 
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-        <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy"
-            href="ppolicy.html" target="_blank"> Privacy policy</a></p>
-      </div>
-    </footer>
-    <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy"
+          href="ppolicy.html" target="_blank"> Privacy policy</a></p>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
 </body>
 
 </html>

@@ -34,33 +34,6 @@
 </head>
 
 <body>
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <a class="navbar-brand" href="#">Navbar</a>
-      <a class="navbar-brand" href="#">Navbar</a>
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDarkDropdown"
-        aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Ver carrito</a></li>
-              <li><a class="dropdown-item" href="#">Mi perfil</a></li>
-              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
   <nav class="site-header sticky-top py-1 bg-dark sombra">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -81,105 +54,121 @@
     </div>
   </nav>
 
-  <div class="container pb-5">
+  <main role="main" class="pb-5">
     <div class="text-center p-4">
       <h2>Carrito de compras</h2>
       <p class="lead">Verás aquí tus artículos en la cesta.</p>
     </div>
-    <div id="cart" class="row p-3" style="background-color: rgba(233, 229, 229, 0.562);"></div>
-
-    <div class="row p-3" style="background-color: rgb(255, 255, 255);">
-      <div class="col-8">
-        <h4 class="mt-2">Dirección</h4>
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputCountry"></label>
-              <select id="inputCountry" class="form-control" required>
-                <option value="" selected disabled style="color: rgb(192, 189, 189);">País</option>
-                <option value="1">Uruguay</option>
-              </select>
-            </div>
-            <div class="form-group col-md-5">
-              <label for="inputCity"></label>
-              <select id="inputCity" class="form-control" required>
-                <option value="" selected disabled style="color: rgb(192, 189, 189);">Ciudad</option>
-                <option value="1">Artigas</option>
-                <option value="2">Canelones</option>
-                <option value="3">Cerro Largo</option>
-                <option value="4">Colonia</option>
-                <option value="5">Durazno</option>
-                <option value="6">Flores</option>
-                <option value="7">Florida</option>
-                <option value="8">Lavalleja</option>
-                <option value="9">Maldonado</option>
-                <option value="10">Montevideo</option>
-                <option value="11">Paysandú</option>
-                <option value="12">Río Negro</option>
-                <option value="13">Rivera</option>
-                <option value="14">Rocha</option>
-                <option value="15">Salto</option>
-                <option value="16">San José</option>
-                <option value="17">Soriano</option>
-                <option value="18">Tacuarembó</option>
-                <option value="19">Treinta y Tres</option>
-              </select>
-            </div>
-            <div class="form-group col-md-3">
-              <label for="inputZip"></label>
-              <input type="text" class="form-control" id="inputZip" placeholder="Código postal">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-4">
-              <input type="text" class="form-control" placeholder="Calle">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Número">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Esquina">
-            </div>
-          </div>
-          <br>
-          <select class="custom-select" id="inputGroupSelect01" required style="width: 200px;">
-            <option value="" selected disabled style="color: rgb(192, 189, 189);">Tipo de envío</option>
-            <option value="1">Premium (2-5 dias)</option>
-            <option value="2">Express (5-8 dias)</option>
-            <option value="3">Standard (12-15 dias)</option>
-          </select><br><br>
-
-          <div class="">
-            <h4 class="">Método de pago</h4>
-            <br>
-            <div class="btn-group" role="group">
-              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Pagar en
-              </button>
-              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="#">Pesos uruguayos</a>
-                <a class="dropdown-item" href="#">Dólares americanos</a>
+    
+    <div class="container">
+      <div id="cart" class="row p-3" style="background-color: rgba(233, 229, 229, 0.562);"></div>
+      <div class="row p-3" style="background-color: rgb(255, 255, 255);">
+        <div class="col-8">
+          <h4 class="mt-2">Dirección</h4>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputCountry"></label>
+                <select id="inputCountry" class="form-control" required>
+                  <option value="" selected disabled style="color: rgb(192, 189, 189);">País</option>
+                  <option value="1">Uruguay</option>
+                </select>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="inputCity"></label>
+                <select id="inputCity" class="form-control" required>
+                  <option value="" selected disabled style="color: rgb(192, 189, 189);">Ciudad</option>
+                  <option value="1">Artigas</option>
+                  <option value="2">Canelones</option>
+                  <option value="3">Cerro Largo</option>
+                  <option value="4">Colonia</option>
+                  <option value="5">Durazno</option>
+                  <option value="6">Flores</option>
+                  <option value="7">Florida</option>
+                  <option value="8">Lavalleja</option>
+                  <option value="9">Maldonado</option>
+                  <option value="10">Montevideo</option>
+                  <option value="11">Paysandú</option>
+                  <option value="12">Río Negro</option>
+                  <option value="13">Rivera</option>
+                  <option value="14">Rocha</option>
+                  <option value="15">Salto</option>
+                  <option value="16">San José</option>
+                  <option value="17">Soriano</option>
+                  <option value="18">Tacuarembó</option>
+                  <option value="19">Treinta y Tres</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="inputZip"></label>
+                <input type="text" class="form-control" id="inputZip" placeholder="Código postal">
               </div>
             </div>
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-              <button type="button" class="btn btn-outline-dark">Tarjeta de crédito</button>
-              <button type="button" class="btn btn-outline-dark">Transferencia bancaria</button>
+            <div class="form-row">
+              <div class="col-4">
+                <input type="text" class="form-control" placeholder="Calle">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Número">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Esquina">
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
+            <br>
+            <select class="custom-select" id="inputGroupSelect01" required style="width: 200px;">
+              <option value="" selected disabled style="color: rgb(192, 189, 189);">Tipo de envío</option>
+              <option value="1">Premium (2-5 dias)</option>
+              <option value="2">Express (5-8 dias)</option>
+              <option value="3">Standard (12-15 dias)</option>
+            </select><br><br>
 
-      <div id="ticket" class="col-4 text-right p-3 borde-ticket sombra"></div>
+            <div class="">
+              <h4 class="">Método de pago</h4>
+              <br>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Pagar en
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#">Pesos uruguayos</a>
+                  <a class="dropdown-item" href="#">Dólares americanos</a>
+                </div>
+              </div>
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-outline-dark">Tarjeta de crédito</button>
+                <button type="button" class="btn btn-outline-dark">Transferencia bancaria</button>
+              </div>
+            </div>
+          </form>
+        </div>
 
-      <div class="col-12 text-center">
-        <button id="checkout" class="btn btn-success mt-5 sombra" type="button" style="width: 390px;">Confirmar</button>
-      </div>
-      <div class="col-12 text-center">
-        <button id="noCheckout" class="btn btn-secondary sombra" type="button" style="width: 390px;">Seguir comprando</button>
+        <div id="ticket" class="col-4 text-right p-3 ticket sombra"></div>
+
+        <div class="col-12 text-center">
+          <button id="checkout" class="btn btn-success mt-5 sombra" type="button"
+            style="width: 390px;">Confirmar</button>
+        </div>
+        <div class="col-12 text-center">
+          <button id="noCheckout" class="btn btn-secondary sombra" type="button" style="width: 390px;">Seguir
+            comprando</button>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
+
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy"
+          href="ppolicy.html" target="_blank"> Privacy policy</a></p>
+    </div>
+  </footer>
 
   <div id="spinner-wrapper">
     <div class="lds-ring">
