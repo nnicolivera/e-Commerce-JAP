@@ -59,10 +59,10 @@
       <h2>Carrito de compras</h2>
       <p class="lead">Verás aquí tus artículos en la cesta.</p>
     </div>
-    
+
     <div class="container">
-      <div id="cart" class="row p-3" style="background-color: rgba(233, 229, 229, 0.562);"></div>
-      <div class="row p-3" style="background-color: rgb(255, 255, 255);">
+      <div id="cart" class="row bg-cart p-3"></div>
+      <div class="row bg-check p-3">
         <div class="col-8">
           <h4 class="mt-2">Dirección</h4>
           <form>
@@ -121,25 +121,24 @@
               <option value="1">Premium (2-5 dias)</option>
               <option value="2">Express (5-8 dias)</option>
               <option value="3">Standard (12-15 dias)</option>
-            </select><br><br>
-
-            <div class="">
-              <h4 class="">Método de pago</h4>
-              <br>
-              <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  Pagar en
-                </button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="#">Pesos uruguayos</a>
-                  <a class="dropdown-item" href="#">Dólares americanos</a>
-                </div>
+            </select>
+            <br>
+            <br>
+            <h4 class="">Método de pago</h4>
+            <br>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Pagar en
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">Pesos uruguayos</a>
+                <a class="dropdown-item" href="#">Dólares americanos</a>
               </div>
-              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                <button type="button" class="btn btn-outline-dark">Tarjeta de crédito</button>
-                <button type="button" class="btn btn-outline-dark">Transferencia bancaria</button>
-              </div>
+            </div>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-outline-dark">Tarjeta de crédito</button>
+              <button type="button" class="btn btn-outline-dark">Transferencia bancaria</button>
             </div>
           </form>
         </div>
@@ -151,8 +150,7 @@
             style="width: 390px;">Confirmar</button>
         </div>
         <div class="col-12 text-center">
-          <button id="noCheckout" class="btn btn-secondary sombra" type="button" style="width: 390px;">Seguir
-            comprando</button>
+          <button id="noCheckout" class="btn btn-secondary sombra" type="button" style="width: 390px;">Seguir comprando</button>
         </div>
       </div>
     </div>

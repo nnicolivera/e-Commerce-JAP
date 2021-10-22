@@ -213,6 +213,14 @@ a.custom-card:hover {
 }
 
 /* cart */
+.bg-cart {
+  background-color: rgba(233, 229, 229, 0.562);
+}
+
+.bg-check {
+  background-color: rgb(255, 255, 255);
+}
+
 .no-deco {
   text-decoration: none !important;
 }
@@ -236,7 +244,7 @@ a.custom-card:hover {
 
 /* my profile */
 .avatar {
-  border-radius: 50%;
+  border-radius: 75%;
 }
 
 .upload-image {
@@ -248,7 +256,7 @@ a.custom-card:hover {
   display: none;
 }
 
-.img {
+.upload-image-icon {
   width: 50px;
   cursor: pointer;
 }

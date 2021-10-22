@@ -65,14 +65,14 @@
           <div class="card mb-3 border-dark" style="max-width: max-content;">
             <div class="row no-gutters">
               <div class="col-md-4 bg-back">
-
-                <img src="/img/me.jpg" class="card-img avatar mt-2 p-3" alt="...">
-
+                
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" width="200" id="userImage" class="card-img avatar mt-2 p-4">
+ 
                 <div class="upload-image">
-                  <label for="file-input">
-                      <img src="/img/camera.svg" class="img"> 
+                  <label for="userPhoto">
+                      <img src="https://media.istockphoto.com/vectors/title-camera-icon-vector-flat-style-isolated-on-grey-background-for-vector-id1127941045?k=20&m=1127941045&s=170667a&w=0&h=aHd3SSYJiPhnuSchMoVF-ygkkQfjC7DmQVwUi1r1Llk=" class="upload-image-icon"> 
                   </label>
-                  <input id="file-input" type="file" accept="image/*">
+                  <input id="userPhoto" type="file" name="image" onchange="loadPhoto(event)" accept="image/jpeg, image/png">
                 </div>
 
               </div>
@@ -144,7 +144,7 @@
           </div>
         </div>
         <div class="col-12 col-md-3">
-          <div class="borde" id="test"><small>test</small></div>
+          
         </div>
       </div>
     </div>
