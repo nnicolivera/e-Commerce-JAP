@@ -16,26 +16,14 @@ var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                 }
                 form.classList.add('was-validated');
 
-                if (filter.test(inputEmail.value) && inputPassword.value != "" || inputPassword.value != null) {
+                if (filter.test(inputEmail.value)) {
                     localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
-                    window.location = "inicio.html";
+                    //window.location = "inicio.html";
                 }
             }, false);
         });
     }, false);
 })();
-
-// LA CONDICIÓN PARA QUE ENTRE SOLO SI COMPLETÓ LOS CAMPOS
-// if (a.classList.contains("valid-feedback") && b.classList.contains("valid-feedback")) {
-
-// }
-
-
-// if (camposCompletos) {
-//     window.location = "inicio.html";
-//     localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
-// }
-
 
 // INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
 // function handleCredentialResponse(response) {
