@@ -1,31 +1,41 @@
-let inputEmail = document.getElementById("inputEmail");
-let inputPassword = document.getElementById("inputPass");
-let camposCompletos = true;
+var inputEmail = document.getElementById("inputEmail");
+var inputPassword = document.getElementById("inputPass");
+var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {
+(function () {
+    'use strict';
+    window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+            document.getElementById('login').addEventListener('click', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
 
-    document.getElementById("entrar").addEventListener("click", function (e) {
+                if (filter.test(inputEmail.value)) {
+                    localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
+                    window.location = "inicio.html";
+                }
+            }, false);
+        });
+    }, false);
+})();
 
-        if (inputEmail.value === "") {
-            camposCompletos = false;
-            alert("Ingresar correo electrónico");
-        }
+// LA CONDICIÓN PARA QUE ENTRE SOLO SI COMPLETÓ LOS CAMPOS
+// if (a.classList.contains("valid-feedback") && b.classList.contains("valid-feedback")) {
 
-        if (inputPassword.value === "") {
-            camposCompletos = false;
-            alert("Ingresar contraseña");
-        }
+// }
 
-        if (camposCompletos) {
-            window.location = "inicio.html";
-            localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
-        }
 
-    })
-});
+// if (camposCompletos) {
+//     window.location = "inicio.html";
+//     localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
+// }
+
 
 // INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
 // function handleCredentialResponse(response) {

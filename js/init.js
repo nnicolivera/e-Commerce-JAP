@@ -73,9 +73,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
   if (document.getElementById("salir")) {
     document.getElementById("salir").addEventListener("click", function () {
       localStorage.removeItem("User-Logged");
+      localStorage.removeItem("User-Email")
       window.location = 'index.html';
     });
   }
-
-
 });

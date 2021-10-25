@@ -22,59 +22,92 @@
   <style>
     body {
       background-image: url(https://wallpaperaccess.com/full/754632.jpg) !important;
-      background-attachment: fixed;
-      background-size: cover;
+      background-attachment: fixed !important;
+      background-size: cover !important;
     }
   </style>
 
 </head>
 
-<body class="img-fluid">
-  <main role="main" class="p-3">
+<body>
+  <main role="main" class="p-2">
     <div class="text-center p-2 sombra" style="border-radius: 10px;">
-      <h1><strong>Bienvenido a E-Mercado</strong></h1>
-      <p class="lead">Por favor, inicia sesión.</p>
+      <h1 class="text-white main-title"><strong>¡Bienvenido a E-Mercado!</strong></h1>
+      <p class="lead"><strong>Por favor, inicia sesión.</strong></p>
     </div>
 
-    <div class="container">
+    <div class="container text-center">
       <div class="row">
-        <div class="col">
-
+        <div class="col d-none d-md-block p-5 text-center bg-transparent borde">
+          <img width="120" class="mt-5" src="img/logo-e-commerce.png" alt="logo-e-commerce">
         </div>
-        
-        <!-- EL FORM ESTÁ SIN USO, HAY QUE APLICARLE LAS CLASES DE VALIDACIONES -->
-        <div class="col-10 col-md-5 text-center">
-          <div class="card-block special-card card-blurry sombra mt-5 p-3">
+
+        <div class="col col-md-5 text-center bg-transparent borde">
+          <div class="card-blurry sombra mt-3 mb-3 p-3">
             <img src="img/login.png" alt="Login">
             <hr class="hr sombra">
             <form class="needs-validation" novalidate>
-              <label for="inputEmail"><strong>Correo electrónico</strong></label><br>
-              <input type="email" class="form-control sombra" id="inputEmail" required>
-              <div class="invalid-feedback">
-                Correo electrónico incorrecto y/o faltan campos.
+              <div class="form">
+                <div>
+                  <label for="inputEmail"><strong>Correo electrónico</strong></label><br>
+                  <input type="text" class="form-control input-center sombra w-75" id="inputEmail" placeholder="user@mail.co" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                  <div id="1" class="invalid-feedback">Incorrecto</div>
+                </div>
+                <br>
+                <div>
+                  <label for="inputPass"><strong>Contraseña</strong></label><br>
+                  <input type="text" class="form-control input-center sombra w-75" id="inputPass" required>
+                  <div id="2" class="invalid-feedback mb-n3">Incorrecto</div>
+                </div>
               </div>
               <br>
-              <label for="inputPass"><strong>Contraseña</strong></label><br>
-              <input type="password" class="form-control sombra" id="inputPass" required>
-              <div class="invalid-feedback">
-                Contraseña incorrecta y/o faltan campos.
+              <div>
+                <input class="form-check-input sombra mb-3" type="checkbox" id="userCheck" checked>
+                <label class="input-center mb-3" for="userCheck"><small>Recordarme</small></label>
               </div>
-              <br>
+              <button id="login" type="submit" class="btn btn-primary w-50 sombra mb-3 mt-n1">Ingresar</button>
             </form>
-            <button id="entrar" type="submit" class="btn btn-primary w-login-btn sombra">Ingresar</button>
-            <br>
+            <small><a href="#" class="text-black">Olvidé mi contraseña</a></small>
           </div>
         </div>
 
-        <div class="col">
-
+        <div class="col d-none d-md-block p-5 text-center bg-transparent borde">
+          <img src="img/logo-ceibal.png" class="mt-5" width="90" alt="logo-ceibal">
         </div>
+      </div>
+      <div class="row">
+        <div class="col-1 bg-transparent"></div>
+        <div class="col d-md-none d-lg-none d-xl-none d-block text-center p-2 bg-transparent">
+          <img width="60" src="img/logo-e-commerce.png" alt="logo-e-commerce">
+        </div>
+        <div class="col d-md-none d-lg-none d-xl-none d-block text-center p-2 bg-transparent">
+          <img src="img/logo-ceibal.png" width="48" alt="logo-ceibal">
+        </div>
+        <div class="col-1 bg-transparent"></div>
       </div>
     </div>
   </main>
-  
 
-  <!-- <div class="container p-5">
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use </a> <a class="ppolicy" href="ppolicy.html" target="_blank"> Privacy policy</a></p>
+    </div>
+  </footer>
+
+  <!-- LOGIN ANTERIOR 1
+    <form > 
+      <label for="inputEmail"><strong>Correo electrónico</strong></label><br>
+      <input type="email" class="form-control input-center sombra w-75" id="inputEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+      <br>
+      <label for="inputPass"><strong>Contraseña</strong></label><br>
+      <input type="password" class="form-control input-center sombra w-75" id="inputPass" required>
+      <br>
+    </form>
+                    
+  LOGIN ANTERIOR 2          
+  <div class="container p-5"> 
     <div>
       <!-- <label for="inputEmail"></label>
       <input type="email" id="inputEmail" placeholder="Correo electrónico" autofocus>  
@@ -91,7 +124,7 @@
      INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
     </div>
   </div>-->
-  
+
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>

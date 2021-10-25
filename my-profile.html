@@ -40,9 +40,8 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div id="userContainer" class="nav-item dropdown" style="display: none;">
-        <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false"></a>
+      <div id="userContainer" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="cart.html">Ver carrito</a>
           <a class="dropdown-item" href="my-user.html">Mi perfil</a>
@@ -61,16 +60,16 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-9 borde-grilla">
+        <div class="col-12 col-md-9">
           <div class="card mb-3 border-dark" style="max-width: max-content;">
             <div class="row no-gutters">
               <div class="col-md-4 bg-back">
                 
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" width="200" id="userImage" class="card-img avatar mt-2 p-4">
+                <img src="avatar.png" width="200" id="userImage" class="card-img avatar mt-2 p-4">
  
                 <div class="upload-image">
                   <label for="userPhoto">
-                      <img src="https://media.istockphoto.com/vectors/title-camera-icon-vector-flat-style-isolated-on-grey-background-for-vector-id1127941045?k=20&m=1127941045&s=170667a&w=0&h=aHd3SSYJiPhnuSchMoVF-ygkkQfjC7DmQVwUi1r1Llk=" class="upload-image-icon"> 
+                      <img src="img/camera.svg" class="upload-image-icon"> 
                   </label>
                   <input id="userPhoto" type="file" name="image" onchange="loadPhoto(event)" accept="image/jpeg, image/png">
                 </div>
@@ -118,7 +117,7 @@
                       <div class="form-row">
                         <div class="col-7 col-md-6 mb-3">
                           <label for="userEmail">E-mail</label>
-                          <input type="email" class="form-control" id="userEmail" placeholder="Ej.: charly@correo.com" required>
+                          <input type="email" class="form-control" id="userEmail" placeholder="Ej.: charly@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
                           <div class="invalid-feedback">
                             Correo electrónico inválido.
                           </div>
@@ -158,12 +157,13 @@
     </div>
   </footer>
 
-  <!-- <div class="alert fade alert-success" role="alert" id="alertResult">
+<!--  ESTE DIV ESTÁ EN EL WORKSPACE INICIAL PERO NO LO USO
+  <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div> -->
+  </div>  -->
 
   <div id="spinner-wrapper">
     <div class="lds-ring">

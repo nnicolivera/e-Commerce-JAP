@@ -51,14 +51,17 @@ userEmail.value = userL.value;
         userL = JSON.parse(userL);
         userP = JSON.parse(userP);
 
-        if (userI && userN && userS && userB && userA && userL && userP) {
-          userImage.src = userI;
+        if (userN && userS && userB && userA && userL && userP) {
           userName.value = userN.value;
           userSurname.value = userS.value;
           userBirth.value = userB.value;
           userAge.value = userA.value;
           userEmail.value = userL.value;
           userPhone.value = userP.value;
+        }
+
+        if (userI) {
+          userImage.src = userI;
         }
 
       document.getElementById('remove').addEventListener('click', function() {
