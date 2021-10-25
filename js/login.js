@@ -16,7 +16,7 @@ var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                 }
                 form.classList.add('was-validated');
 
-                if (filter.test(inputEmail.value)) {
+                if (filter.test(inputEmail.value) && inputPassword.value != "" || inputPassword.value != null) {
                     localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
                     window.location = "inicio.html";
                 }
