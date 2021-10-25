@@ -18,7 +18,7 @@ var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
                 if (filter.test(inputEmail.value)) {
                     localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
-                    //window.location = "inicio.html";
+                    window.location = "inicio.html";
                 }
             }, false);
         });
