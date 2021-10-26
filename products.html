@@ -77,17 +77,17 @@
               <input type="number" class="form-control" id="max" placeholder="hasta:">
               <br>
               <div class="text-center">
-                <input type="button" id="filtrar" class="btn-light btn btn-group" style="width: 100px;" value="Filtrar">
-                <input type="button" id="limpiar" class="btn-light btn btn-group" style="width: 100px;" value="Limpiar">
+                <input type="button" id="filtrar" class="btn-light btn btn-group sombra" style="width: 100px;" value="Filtrar">
+                <input type="button" id="limpiar" class="btn-light btn btn-group sombra" style="width: 100px;" value="Limpiar">
               </div>
             </div>
             <hr class="hr2">
             <div id="ordenar">
               <h4 class="text-center">Ordenar por:</h4>
-              <div class="text-center">
-                <a class="no-deco" href="javascript:costAsc()">Menor precio</a><br>
-                <a class="no-deco" href="javascript:costDesc()">Mayor precio</a><br>
-                <a class="no-deco" href="javascript:soldCount()">Más relevantes</a>
+              <div class="row text-center">
+                <div class="col"><a class="no-deco" href="javascript:costAsc()"><img src="img/sort-ascending.svg" alt="ascending" width="20px"></a></div>
+                <div class="col"><a class="no-deco" href="javascript:costDesc()"><img src="img/sort-descending.svg" alt="descending" width="20px"></a></div>
+                <div class="col"><a class="no-deco" href="javascript:soldCount()"><img src="img/sort-relevance.svg" alt="relevance" width="20px"></a></div>
               </div>
             </div>
           </div>
@@ -95,9 +95,9 @@
 
         &nbsp;
 
-        <div id="listado" class="col-12 col-md-6"></div>
+        <div class="col d-sm-none col-lg-1 d-lg-block d-xl-block"></div>
 
-        <div class="col col-md"></div>
+        <div id="listado" class="col-12 col-md"></div>
 
       </div>
     </div>

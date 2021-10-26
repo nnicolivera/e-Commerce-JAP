@@ -178,6 +178,12 @@ a.custom-card:hover {
   color: white;
 }
 
+/* PRODUCTOS */
+
+.h {
+  height: 80px;
+}
+
 .filtros {
   background: radial-gradient(circle, rgba(174, 238, 179, 0.493) 0%, rgba(199, 211, 39, 0.644) 150%);
   border-color:rgba(0, 0, 0, 0.822);
@@ -185,6 +191,7 @@ a.custom-card:hover {
   border-width: 20px;
 }
 
+/* INFO PRODUCTOS */
 .thumbnail {
   float: left;
   margin-right: 15px;
@@ -224,7 +231,7 @@ a.custom-card:hover {
   color: #ffbf00
 }
 
-/* cart */
+/* CART */
 .bg-cart {
   background-color: rgba(233, 229, 229, 0.562);
 }
@@ -254,7 +261,7 @@ a.custom-card:hover {
   border-style: dotted;
 }
 
-/* my profile */
+/* MI PERFIL */
 .avatar {
   border-radius: 75%;
 }
@@ -269,7 +276,7 @@ a.custom-card:hover {
 }
 
 .upload-image-icon {
-  width: 50px;
+  width: 60px;
   cursor: pointer;
 }
 
@@ -283,7 +290,7 @@ a.custom-card:hover {
   -moz-appearance:textfield !important;
 }
 
-/* terms & policy */
+/* T&P */
 .terms {
   font-size: small; 
 }
@@ -293,7 +300,7 @@ a.custom-card:hover {
   margin-left: 2em;
 }
 
-/* global */
+/* GLOBALES */
 .borde {
   border-color: black;
   border-width: 1px;
@@ -315,4 +322,23 @@ a.custom-card:hover {
   height: 2px;
   background-color: black;
   width: 100%;
+}
+
+  /* hover zoom */
+  /* The container */
+.img-hover-zoom {
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+  
+  /* Transition property for smooth transformation of images */
+.img-hover-zoom img {
+  transition: transform 2s, filter 1.5s ease-in-out;
+  transform-origin: center 50%;
+  filter: brightness(50%);
+}
+  
+  /* transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+  filter: brightness(100%);
+  transform: scale(1.3);
 }
