@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   let userContainer = document.getElementById('userContainer');
 
-  if (userLogged) {
+  if (userLogged && user) {
 
     userLogged = JSON.parse(userLogged);
 

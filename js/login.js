@@ -1,28 +1,36 @@
 var inputEmail = document.getElementById("inputEmail");
 var inputPassword = document.getElementById("inputPass");
-var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+var togglePassword = document.getElementById("toggle-password");
 
 (function () {
-    'use strict';
     window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
+
         var validation = Array.prototype.filter.call(forms, function (form) {
-            document.getElementById('login').addEventListener('click', function (event) {
+            form.addEventListener('submit', function (event) {
                 if (form.checkValidity() === false) {
                     event.preventDefault();
                     event.stopPropagation();
                 }
-                form.classList.add('was-validated');
-
-                if (filter.test(inputEmail.value)) {
+                if (form.checkValidity()) {
                     localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
                     window.location = "inicio.html";
-                }
+                  }
+                  form.classList.add('was-validated');
+                
             }, false);
         });
     }, false);
+
+    togglePassword.addEventListener("click", function() {
+        if (this.checked) {
+            inputPassword.type = "text";
+        } else {
+            inputPassword.type = "password";
+        }
+        inputPassword.classList.toggle('visible'); 
+    });
+    
 })();
 
 // INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
