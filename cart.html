@@ -32,7 +32,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
 
-  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/e-Commerce-JAP/img/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/e-Commerce-JAP/img/favicon/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/e-Commerce-JAP/img/favicon/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/e-Commerce-JAP/img/favicon/apple-touch-icon-144x144.png">
@@ -40,18 +40,19 @@
   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/e-Commerce-JAP/img/favicon/apple-touch-icon-120x120.png">
   <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/e-Commerce-JAP/img/favicon/apple-touch-icon-76x76.png">
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/e-Commerce-JAP/img/favicon/apple-touch-icon-152x152.png">
-  <link rel="icon" type="image/png" href="/e-Commerce-JAP/img/favicon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-196x196.png" sizes="196x196">
   <link rel="icon" type="image/png" href="/e-Commerce-JAP/img/favicon/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/png" href="/e-Commerce-JAP/img/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/e-Commerce-JAP/img/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="icon" type="image/png" href="/e-Commerce-JAP/img/favicon/favicon-128.png" sizes="128x128">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-128.png" sizes="128x128">
   <meta name="application-name" content="&nbsp;">
   <meta name="msapplication-TileColor" content="#FFFFFF">
-  <meta name="msapplication-TileImage" content="mstile-144x144.png">
-  <meta name="msapplication-square70x70logo" content="mstile-70x70.png">
-  <meta name="msapplication-square150x150logo" content="mstile-150x150.png">
-  <meta name="msapplication-wide310x150logo" content="mstile-310x150.png">
-  <meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+  <meta name="msapplication-TileImage" content="/e-Commerce-JAP/img/favicon/mstile-144x144.png">
+  <meta name="msapplication-square70x70logo" content="/e-Commerce-JAP/img/favicon/mstile-70x70.png">
+  <meta name="msapplication-square150x150logo" content="/e-Commerce-JAP/img/favicon/mstile-150x150.png">
+  <meta name="msapplication-wide310x150logo" content="/e-Commerce-JAP/img/favicon/mstile-310x150.png">
+  <meta name="msapplication-square310x310logo" content="/e-Commerce-JAP/img/favicon/mstile-310x310.png">
+
 </head>
 
 <body>
@@ -63,7 +64,8 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div id="userContainer" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+        <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false"></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="cart.html">Ver carrito</a>
           <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
@@ -123,7 +125,8 @@
               </div>
               <div class="form-group col-4 col-md-3">
                 <label for="inputZip"></label>
-                <input type="number" class="form-control inputN-no-i" id="inputZip" placeholder="Código postal" min="0" required>
+                <input type="number" class="form-control inputN-no-i" id="inputZip" placeholder="Código postal" min="0"
+                  required>
               </div>
             </div>
             <div class="form-row">
@@ -144,7 +147,7 @@
               <option value="2">Express (5-8 dias, 7%)</option>
               <option value="3">Standard (12-15 dias, 5%)</option>
             </select>
-          
+
         </div>
 
         <div id="ticket" class="col-md-12 col-lg-4 text-lg-right text-center p-3 ticket sombra"></div>
@@ -153,12 +156,13 @@
           <div id="invalid-msg" class="invalid-msg d-none mt-5">
             <p>Debe completar un método de pago</p>
           </div>
-          <button class="btn btn-success sombra" type="button" data-toggle="modal" data-target="#exampleModalCenter" style="width: 390px;">Método de pago</button>
+          <button class="btn btn-success sombra" type="button" data-toggle="modal" data-target="#exampleModalCenter"
+            style="width: 390px;">Método de pago</button>
         </div>
         <div class="col-12 text-center">
           <button id="" class="btn btn-primary sombra" type="submit" style="width: 390px;">Confirmar compra</button>
         </div>
-      </form>  
+        </form>
       </div>
     </div>
 
@@ -188,12 +192,12 @@
                   <div class="row p-4 mt-4">
                     <div class="col-7">
                       <label for="inputCardNumber">Número de tarjeta</label>
-                      <input type="number" class="form-control inputN-no-i" id="inputCardNumber" min="0" placeholder="____ / ____ / ____ / ____">
+                      <input type="number" class="form-control inputN-no-i" id="inputCardNumber" min="0"
+                        placeholder="____ / ____ / ____ / ____">
                     </div>
                     <div class="col-5">
                       <label for="inputCardCode">CVV</label>
-                      <input type="number" class="form-control inputN-no-i" id="inputCardCVV" min="0"
-                        placeholder="123">
+                      <input type="number" class="form-control inputN-no-i" id="inputCardCVV" min="0" placeholder="123">
                     </div>
                     <div class="col-7 mt-4">
                       <label for="inputCardDate">Fecha de vencimiento</label>
