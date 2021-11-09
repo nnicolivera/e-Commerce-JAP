@@ -5,23 +5,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     getJSONData(PRODUCTS_URL).then(function (resultado) {
         if (resultado.status === "ok") {
-            autosLista = resultado.data;
+            productsLista = resultado.data;
 
-            showAutos(autosLista);
+            showProducts(productsLista);
         }
     });
 
 });
 
-var autosLista = [];
+var productsLista = [];
 var minCost;
 var maxCost;
 var buscar;
 
-function sortAutos(criterio, autosLista) {
+function sortProducts(criterio, productsLista) {
     let result = [];
     if (criterio === 1) {
-        result = autosLista.sort(
+        result = productsLista.sort(
             function (a, b) {
                 if (a.cost < b.cost) { return -1; }
                 if (a.cost > b.cost) { return 1; }
@@ -30,7 +30,7 @@ function sortAutos(criterio, autosLista) {
 
 
     } else if (criterio === 2) {
-        result = autosLista.sort(
+        result = productsLista.sort(
             function (a, b) {
                 if (a.cost > b.cost) { return -1; }
                 if (a.cost < b.cost) { return 1; }
@@ -38,7 +38,7 @@ function sortAutos(criterio, autosLista) {
             });
 
     } else if (criterio === 3) {
-        result = autosLista.sort(
+        result = productsLista.sort(
             function (a, b) {
                 if (a.soldCount < b.soldCount) { return 1; }
                 if (a.soldCount > b.soldCount) { return -1; }
@@ -50,38 +50,38 @@ function sortAutos(criterio, autosLista) {
 }
 
 function costAsc() {
-    sortAutos(1, autosLista);
-    showAutos(autosLista);
+    sortProducts(1, productsLista);
+    showProducts(productsLista);
 }
 
 function costDesc() {
-    sortAutos(2, autosLista);
-    showAutos(autosLista);
+    sortProducts(2, productsLista);
+    showProducts(productsLista);
 }
 
 function soldCount() {
-    sortAutos(3, autosLista);
-    showAutos(autosLista);
+    sortProducts(3, productsLista);
+    showProducts(productsLista);
 }
 
-function showAutos(autosLista) {
+function showProducts(productsLista) {
 
     let datos = "";
-    for (let i = 0; i < autosLista.length; i++) {
-        let auto = autosLista[i];
+    for (let i = 0; i < productsLista.length; i++) {
+        let product = productsLista[i];
 
-        if (((minCost == undefined) || (minCost != undefined && parseInt(auto.cost) >= minCost)) &&
-            ((maxCost == undefined) || (maxCost != undefined && parseInt(auto.cost) <= maxCost))) {
+        if (((minCost == undefined) || (minCost != undefined && parseInt(product.cost) >= minCost)) &&
+            ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost))) {
 
-            if (buscar == undefined || auto.name.toLowerCase().includes(buscar)) {
+            if (buscar == undefined || product.name.toLowerCase().includes(buscar)) {
 
                 datos += `
-                            <a href="product-info.html" onclick="productInfo(${auto.id})" class="no-deco h">
-                                <img src= ${auto.imgSrc} width="120px" class="img-thumbnail thumbnail sombra">
+                            <a href="product-info.html" onclick="productInfo(${product.id})" class="no-deco h">
+                                <img src= ${product.imgSrc} width="120px" class="img-thumbnail thumbnail sombra">
                                 <div class="list-group-item-action h">
-                                    <div style="float: left;"><strong>${auto.name}</strong></div> <div style="float: right;"><small>${auto.currency} ${auto.cost}.</small></div>
+                                    <div style="float: left;"><strong>${product.name}</strong></div> <div style="float: right;"><small>${product.currency} ${product.cost}.</small></div>
                                     <br>
-                                    ${auto.description}
+                                    ${product.description}
                                     <br><br>
                                 </div>
                             </a>
@@ -94,7 +94,7 @@ function showAutos(autosLista) {
 }
 
 function productInfo(id) {
-    localStorage.setItem("auto", JSON.stringify({ autoID: id }));
+    localStorage.setItem("product", JSON.stringify({ productID: id }));
 }
 
 document.getElementById("filtrar").addEventListener("click", function () {
@@ -112,7 +112,7 @@ document.getElementById("filtrar").addEventListener("click", function () {
     } else {
         maxCost = undefined;
     }
-    showAutos(autosLista);
+    showProducts(productsLista);
 });
 
 document.getElementById("limpiar").addEventListener("click", function () {
@@ -123,11 +123,11 @@ document.getElementById("limpiar").addEventListener("click", function () {
     minCost = undefined;
     maxCost = undefined;
 
-    showAutos(autosLista);
+    showProducts(productsLista);
 });
 
 document.getElementById("buscador").addEventListener("input", function () {
 
     buscar = document.getElementById("buscador").value.toLowerCase();
-    showAutos(autosLista);
+    showProducts(productsLista);
 });

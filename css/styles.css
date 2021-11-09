@@ -136,6 +136,9 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
+html, body {
+    height: 100%;
+}
 /* LOGIN */
 
 /* google 
@@ -148,7 +151,7 @@ a.custom-card:hover {
 }
 */
 
-.bg-login {
+.bg {
   background-image: url(http://thesweetsetup.com/wp-content/uploads/2016/11/sunrise-blur.jpg) !important;
   background-attachment: fixed !important;
   background-size: cover !important;
@@ -176,7 +179,7 @@ a.custom-card:hover {
 
 #inputPass {  
   background-image: url("https://img.icons8.com/material-sharp/20/000000/visible.png");
-  background-position: 97% center;
+  background-position: 97%;
   background-repeat: no-repeat;
 }
 #inputPass.visible {
@@ -187,11 +190,12 @@ a.custom-card:hover {
 }
 #toggle-password + label {
   position: absolute;
+  z-index: 2;
   text-indent: -9999px;
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-left: 126.5px;
+  margin-left: 124.5px;
   margin-top: -29px !important;
   cursor: pointer;
 }
@@ -213,17 +217,16 @@ a.custom-card:hover {
   border-width: 20px;
 }
 
-/* INFO PRODUCTOS */
 .thumbnail {
   float: left;
   margin-right: 15px;
 }
 
+/* INFO PRODUCTOS */
+
 .img-related {
   float: right;
   margin-left: 20px;
-  width: 120px;
-  height: 80px;
 }
 
 .checked {
@@ -279,9 +282,19 @@ a.custom-card:hover {
   border-style: dotted;
 }
 
+.w-c {
+  width: 190px;
+}
+
+.invalid-msg {
+  color: #dc3545;
+}
+
 /* MI PERFIL */
 .avatar {
-  border-radius: 75%;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
 }
 
 .upload-image {

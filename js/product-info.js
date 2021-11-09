@@ -1,3 +1,10 @@
+var product1 = [];
+var product2 = [];
+var product3 = [];
+var product4 = [];
+var product = [{product1}, {product2}, {product3}, {product4}];
+
+
 //  Función que se ejecuta una vez que se haya lanzado el evento de
 //  que el documento se encuentra cargado, es decir, se encuentran todos los
 //  elementos HTML presentes.
@@ -11,19 +18,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
         getJSONData(PRODUCT1_URL).then(function (result) {
             if (result.status === "ok") {
 
-                let auto = result.data;
-                if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
+                product1 = result.data;
+                if (product1.id == JSON.parse(localStorage.getItem("product")).productID) {
                     comments.forEach(comments => {
-                        showAutoInfo(auto, comments);
+                        showproductInfo(product1, comments);
                     });
                 }
 
                 getJSONData(PRODUCTS_URL).then(function (result) {
                     if (result.status === "ok") {
 
-                        let autos = result.data;
-                        if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
-                            showRelatedProducts(autos, auto.relatedProducts);
+                        let products = result.data;
+                        if (product1.id == JSON.parse(localStorage.getItem("product")).productID) {
+                            showRelatedProducts(products, product1.relatedProducts);
                         }
                     }
                 });
@@ -39,19 +46,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
         getJSONData(PRODUCT2_URL).then(function (result) {
             if (result.status === "ok") {
 
-                let auto = result.data;
-                if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
+                product2 = result.data;
+                if (product2.id == JSON.parse(localStorage.getItem("product")).productID) {
                     comments.forEach(comments => {
-                        showAutoInfo(auto, comments);
+                        showproductInfo(product2, comments);
                     });
                 }
 
                 getJSONData(PRODUCTS_URL).then(function (result) {
                     if (result.status === "ok") {
 
-                        let autos = result.data;
-                        if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
-                            showRelatedProducts(autos, auto.relatedProducts);
+                        let products = result.data;
+                        if (product2.id == JSON.parse(localStorage.getItem("product")).productID) {
+                            showRelatedProducts(products, product2.relatedProducts);
                         }
                     }
                 });
@@ -67,19 +74,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
         getJSONData(PRODUCT3_URL).then(function (result) {
             if (result.status === "ok") {
 
-                let auto = result.data;
-                if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
+                product3 = result.data;
+                if (product3.id == JSON.parse(localStorage.getItem("product")).productID) {
                     comments.forEach(comments => {
-                        showAutoInfo(auto, comments);
+                        showproductInfo(product3, comments);
                     });
                 }
 
                 getJSONData(PRODUCTS_URL).then(function (result) {
                     if (result.status === "ok") {
 
-                        let autos = result.data;
-                        if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
-                            showRelatedProducts(autos, auto.relatedProducts);
+                        let products = result.data;
+                        if (product3.id == JSON.parse(localStorage.getItem("product")).productID) {
+                            showRelatedProducts(products, product3.relatedProducts);
                         }
                     }
                 });
@@ -95,19 +102,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
         getJSONData(PRODUCT4_URL).then(function (result) {
             if (result.status === "ok") {
 
-                let auto = result.data;
-                if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
+                product4 = result.data;
+                if (product4.id == JSON.parse(localStorage.getItem("product")).productID) {
                     comments.forEach(comments => {
-                        showAutoInfo(auto, comments);
+                        showproductInfo(product4, comments);
                     });
                 }
 
                 getJSONData(PRODUCTS_URL).then(function (result) {
                     if (result.status === "ok") {
 
-                        let autos = result.data;
-                        if (auto.id == JSON.parse(localStorage.getItem("auto")).autoID) {
-                            showRelatedProducts(autos, auto.relatedProducts);
+                        let products = result.data;
+                        if (product4.id == JSON.parse(localStorage.getItem("product")).productID) {
+                            showRelatedProducts(products, product4.relatedProducts);
                         }
                     }
                 });
@@ -116,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 
-function showAutoInfo(auto, comm) {
+function showproductInfo(product, comm) {
 
     let info = "";
     let imgs = "";
@@ -129,20 +136,20 @@ function showAutoInfo(auto, comm) {
     let fiv = document.getElementById("5star");
 
     info += ` 
-                <div class="col-12 col-md-8">
-                    <h2 style="color: white;"><strong>${auto.name}</strong></h2>
+                <div class="col-10 col-md-8">
+                    <h2 style="color: white;"><strong>${product.name}</strong></h2>
                 </div>
-                <div class="col-5 col-md-4 text-right">
-                    <small class="d-none d-md-block" style="color: black;">${auto.soldCount} unidades vendidas</small>
+                <div class="col-md-4 d-none d-md-block text-right">
+                    <small class="" style="color: black;">${product.soldCount} unidades vendidas</small>
                 </div>
                 <div class="col-12 col-md-12">
-                    <h4 style="color: white;">${auto.currency} ${auto.cost}</h4>
+                    <h4 style="color: rgba(255, 251, 28, 0.925);">${product.currency} ${product.cost}</h4>
                 </div>
                 &nbsp;
                 <div class="col col-md-12">
-                    <p>${auto.description_long}</p>
+                    <p>${product.description_long}</p>
                 </div>     
-            `
+            `;
 
     imgs += `   
                 <div id="carouselExampleIndicators" class="carousel img-thumbnail slide" data-ride="carousel">
@@ -155,19 +162,19 @@ function showAutoInfo(auto, comm) {
                     </ol>
                     <div class="carousel-inner img-hover-zoom">
                         <div class="carousel-item active">
-                            <img class="img-fluid" src="img/prod${auto.id}.jpg" alt="...">
+                            <img class="img-fluid" src="img/prod${product.id}.jpg" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img class="img-fluid" src="img/prod${auto.id}_1.jpg" alt="...">
+                            <img class="img-fluid" src="img/prod${product.id}_1.jpg" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img class="img-fluid" src="img/prod${auto.id}_2.jpg" alt="...">
+                            <img class="img-fluid" src="img/prod${product.id}_2.jpg" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img class="img-fluid" src="img/prod${auto.id}_3.jpg" alt="...">
+                            <img class="img-fluid" src="img/prod${product.id}_3.jpg" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img class="img-fluid" src="img/prod${auto.id}_4.jpg" alt="...">
+                            <img class="img-fluid" src="img/prod${product.id}_4.jpg" alt="...">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -179,7 +186,7 @@ function showAutoInfo(auto, comm) {
                         <span class="sr-only">Next</span>
                     </a>
                 </div>         
-            `
+            `;
 
     comments += `
                     <br>
@@ -187,7 +194,7 @@ function showAutoInfo(auto, comm) {
                         <strong>${comm.user}</strong>: ${comm.description}
                     </div>
 
-                    <div style="float: right;">
+                    <div class="d-none d-lg-block" style="float: right;">
                         <span id="1star" class="fa fa-star"></span>
                         <span id="2star" class="fa fa-star"></span>
                         <span id="3star" class="fa fa-star"></span>
@@ -195,8 +202,7 @@ function showAutoInfo(auto, comm) {
                         <span id="5star" class="fa fa-star"></span>
                     </div>
                     <br>
-                    <strong>Rating: </strong>${comm.score}/5.
-                    <br>           
+                    <div class="d-lg-none d-xl-none d-block"><strong>Rating: </strong>${comm.score}/5.</div>          
                 `;
     /*
          if (comm.score == 1) {
@@ -230,35 +236,54 @@ function showAutoInfo(auto, comm) {
         }
     */
 
-    document.getElementById("content").innerHTML = info;
+    document.getElementById("info").innerHTML = info;
     document.getElementById("images").innerHTML = imgs;
     document.getElementById("comments").innerHTML += comments;
 }
 
-function showRelatedProducts(autos, autosRelacionados) {
+function showRelatedProducts(products, relatedProducts) {
 
-    let contenido = `   <h4>Productos relacionados</h4> 
-                        <br>
-                    `
+    let info = `
+                    <a href="#" onclick="addToCart()"><img src="img/add.png" class="img-fluid" alt=""></a>
+                    <br><br><div class="d-none d-lg-block mt-4"></div><div class="d-none d-xl-block mt-4"></div>
+                    <h4 class="mb-4">Relacionados</h4>
+                `
+    relatedProducts.forEach(function (indice) {
 
-    autosRelacionados.forEach(function (indice) {
-
-        contenido +=`
-                        <a href="#" class="no-deco" style="padding-right: -250px" onclick="relatedProductInfo(${autos[indice].id})">
-                            <img class="img-related" src="img/prod${autos[indice].id}.jpg" alt="...">
-                            <div>
-                                <strong> ${autos[indice].name} </strong>
-                                <br>
-                                ${autos[indice].currency} ${autos[indice].cost} 
-                                <br><br><br>
+        info +=     `
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <a href="" class="no-deco" onclick="relatedProductInfo(${products[indice].id})">
+                                    <img class="img-related img-fluid" src="img/prod${products[indice].id}.jpg" alt="...">
+                                </a> 
                             </div>
-                        </a> 
-                    `
+                            <div class="col">
+                                <a href="#" class="no-deco" onclick="relatedProductInfo(${products[indice].id})">
+                                    <div>
+                                        <strong> ${products[indice].name} </strong>
+                                        <br>
+                                        <div class="d-none d-lg-block">${products[indice].currency} ${products[indice].cost}</div>
+                                    </div>
+                                </a> 
+                            </div>
+                            <div class="col-3 d-sm-none"></div>
+                        </div>
+                    `;
     });
 
-    document.getElementById("relatedProducts").innerHTML = contenido;
+    document.getElementById("relatedProducts").innerHTML = info;
 }
 
 function relatedProductInfo(id) {
-    localStorage.setItem("autoRelacionado", JSON.stringify({ autoRelacionadoID: id }));
+    localStorage.setItem("product", JSON.stringify({ productID: id }));
+}
+
+function addToCart() {
+    localStorage.setItem('Article', JSON.stringify({
+        nombre: product1.name,
+        cantidad: 1,
+        src: product1.images[0],
+        costo: product.cost,
+        moneda: product.currency
+    }));
 }

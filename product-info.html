@@ -69,7 +69,7 @@
         <img src="img/arrow-return-left.svg" alt="..." width="30px">
       </a>
       <br><br>
-      <div id="content" class="row"></div>
+      <div id="info" class="row p-5" style="background-color: rgba(119, 136, 153, 0.342); border-radius: 8px;"></div>
 
       <br>
 
@@ -77,19 +77,29 @@
         <div id="images" class="col-12 col-md-7">
 
         </div>
-        <div id="relatedProducts" class="d-none d-md-block col-md-5 text-right">
+        <div class="col d-none d-md-block">
 
+        </div>
+        <div id="relatedProducts" class="col-4 d-none d-md-block">
+          
         </div>
       </div>
       <br>
       <div class="row">
+        <div class="col-12 d-md-none text-center">
+          <a href="cart.html" onclick="addToCart()"><img class="img-fluid" src="img/add.png" alt="" width="300"></a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12"><h4 class="text-left">Opiniones sobre el producto</h4></div>
         <div class="col-12 col-md-4">
-          <h4>Opiniones sobre el producto</h4>
-          <div class="form-group">
-            <label for="textarea"></label>
-            <textarea id="textarea" class="form-control" name="reseña" rows="3"
-              placeholder="Escribe un comentario..."></textarea>
-          </div>
+          
+          <label for="username"></label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Nombre:">
+          <label for="textarea"></label>
+          <textarea id="textarea" class="form-control" name="reseña" rows="3" placeholder="Escribe un comentario..."></textarea>
+          
           <div class="star-rating">
             <input id="star-5" type="radio" name="rating" value="5" />
             <label for="star-5" title="5 stars">
@@ -118,10 +128,10 @@
           </div>
           <br>
           <button type="button" class="btn btn-success">Enviar</button>
+          <br><br>
         </div>
 
         <div id="comments" class="col-12 col-md-8">
-          <h4>&nbsp;</h4>
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@
   <meta name="msapplication-square310x310logo" content="mstile-310x310.png">
 </head>
 
-<body class="bg-login">
+<body class="bg">
   <main role="main" class="p-2">
     <div class="text-center p-2 sombra" style="border-radius: 10px;">
       <h1 class="text-white main-title"><strong>¡Bienvenido a E-Mercado!</strong></h1>
@@ -59,37 +59,39 @@
           <img class="mt-5" src="img/logo-e-commerce.png" alt="logo-e-commerce" width="120">
         </div>
 
-        <div class="col col-md-5 bg-transparent borde">
+        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 bg-transparent borde">
           <div class="card-blurry sombra mt-3 mb-3 p-3">
             <img src="img/login.png" alt="Login">
             <hr class="hr-d sombra">
-            <form class="needs-validation" onsubmit="return false" novalidate>
+            <div id="login-inputs">
+              <form class="needs-validation" onsubmit="return false" novalidate>
 
-              <div class="form-group">
-                <label for="inputEmail"><strong>Correo electrónico</strong></label><br>
-                <input type="email" class="form-control input-center sombra w-75" id="inputEmail" placeholder="example@email.com" required>
-                <div class="invalid-feedback">Incorrecto</div>
-              </div>
-
-              <div class="form-group">
-                <label for="inputPass"><strong>Contraseña</strong></label><br>
-                <input type="password" class="form-control input-center sombra w-75" id="inputPass" minlength="6" required>
-                <input type="checkbox" id="toggle-password" />
-                <label for="toggle-password">Mostrar contraseña</label>
-                <div class="invalid-feedback mb-n3">Incorrecto</div>
-              </div>
-
-              <div class="form-group">
-                <input class="form-check-input sombra" type="checkbox" id="userCheck">
-                <label class="input-center ml-adjust" for="userCheck"><small>Recordarme</small></label>
-              </div>
-
-              <div class="form-group">
-                <button id="login" type="submit" class="btn btn-primary w-50 sombra">Ingresar</button>
-              </div>
-
-            </form>
-            <small><a href="#" class="text-black">Olvidé mi contraseña</a></small>
+                <div class="form-group">
+                  <label for="inputEmail"><strong>Correo electrónico</strong></label><br>
+                  <input type="email" class="form-control input-center sombra w-75" id="inputEmail" placeholder="example@email.com" required>
+                  <div class="invalid-feedback">Incorrecto</div>
+                </div>
+  
+                <div class="form-group">
+                  <label for="inputPass"><strong>Contraseña</strong></label><br>
+                  <input type="password" class="form-control input-center sombra w-75" id="inputPass" minlength="6" required>
+                  <input type="checkbox" id="toggle-password">
+                  <label for="toggle-password">Mostrar contraseña</label>
+                  <div class="invalid-feedback mb-n3">Incorrecto</div>
+                </div>
+  
+                <div class="form-group">
+                  <input class="form-check-input sombra" type="checkbox" id="userCheck">
+                  <label class="input-center ml-adjust" for="userCheck"><small>Recordarme</small></label>
+                </div>
+  
+                <div class="form-group">
+                  <button id="login" type="submit" class="btn btn-primary w-50 sombra">Ingresar</button>
+                </div>
+  
+              </form>
+            </div>
+            <small><a href="#" class="text-black" onclick="forgotPassword()">Olvidé mi contraseña</a></small>
           </div>
         </div>
 
@@ -137,9 +139,6 @@
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
-
-
-
 
 </body>
 

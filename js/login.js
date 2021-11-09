@@ -22,7 +22,7 @@ var togglePassword = document.getElementById("toggle-password");
         });
     }, false);
 
-    togglePassword.addEventListener("click", function() {
+    togglePassword.addEventListener("click", function showPassword() {
         if (this.checked) {
             inputPassword.type = "text";
         } else {
@@ -33,6 +33,10 @@ var togglePassword = document.getElementById("toggle-password");
     
 })();
 
+function forgotPassword() {
+    document.getElementById('login-inputs').classList.add('d-none');
+    
+}
 // INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
 // function handleCredentialResponse(response) {
 //     console.log("Encoded JWT ID token: " + response.credential);
