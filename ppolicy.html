@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    
+
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
@@ -36,13 +36,14 @@
 </head>
 
 <body>
-    <nav class="site-header sticky-top py-1 bg-dark sombra">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
-            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-            <div id="userContainer" class="nav-item dropdown" style="display: none;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sombra">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="userContainer" class="nav-item dropdown d-block d-lg-none">
                 <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"></a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -52,8 +53,33 @@
                     <a id="salir" class="dropdown-item" href="index.html">Cerrar sesión</a>
                 </div>
             </div>
+            <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarToggler">
+                <a class="navbar-brand" href="inicio.html">Inicio</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sell.html">Vender</a>
+                    </li>
+                </ul>
+                <div id="userContainerLg" class="nav-item dropdown d-none d-lg-block">
+                    <a class="nav-link dropdown-toggle" href="#" id="userLg" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="cart.html">Ver carrito</a>
+                        <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                        <div class="dropdown-divider"></div>
+                        <a id="salir" class="dropdown-item" href="index.html">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
+    
     <div class="container p-5">
         <h1>Privacy Policy</h1>
         <p>Last updated: September 07, 2021</p>
@@ -400,15 +426,15 @@
             </p>
             <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
             <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-            <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use</a> <a class="ppolicy" href="ppolicy.html" target="_blank"> Privacy policy</a></p>
+            <p style="float: right;"><a class="terms" href="terms.html" target="_blank">Terms of use</a> <a
+                    class="ppolicy" href="ppolicy.html" target="_blank"> Privacy policy</a></p>
         </div>
     </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/dropzone.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
-    
+
 </body>
 
 </html>

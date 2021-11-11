@@ -1,39 +1,10 @@
 var selectShipping = document.getElementById('inputShippingType');
-var cardNum = document.getElementById('inputCardNumber').value;
-var cardCVV = document.getElementById('inputCardCVV').value;
-var cardDate = document.getElementById('inputCardDate').value;
-var bankAcc = document.getElementById('inputBankAccount').value;
-var invalidmsg = document.getElementById('invalid-msg');
-
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {
-
-  var newItem = localStorage.getItem('Article');
-
-  getJSONData(CART_INFO2_URL).then(function (result) {
-    if (result.status === "ok") {
-
-      cart = result.data.articles;
-
-      if (newItem) {
-        let newItem = {
-          nombre: JSON.parse(localStorage.getItem('Article')).nombre,
-          cantidad: JSON.parse(localStorage.getItem('Article')).cantidad,
-          src: JSON.parse(localStorage.getItem('Article')).src,
-          costo: JSON.parse(localStorage.getItem('Article')).costo,
-          moneda: (localStorage.getItem('Article')).moneda
-        }
-        cart.push(newItem);
-      }
-
-      showCartProducts(cart);
-      calcSubTotalGeneral();
-      calcTotal();
-    }
-  })
-});
+var cardNum = document.getElementById('inputCardNumber');
+var cardCVV = document.getElementById('inputCardCVV');
+var cardDate = document.getElementById('inputCardDate');
+var bankAcc = document.getElementById('inputBankAccount');
+var invalidpaymentmsg = document.getElementById('invalid-payment');
+var pay;
 
 var cart = [];
 var currency = "";
@@ -51,9 +22,10 @@ function calcSubTotalUnitary(cost, i) {
   } else {
     subTotalUnitario = cost * quantity;
   }
-  subTotalUnitario += " UYU"
+  subTotalUnitario += " UYU";
   document.getElementById(`costUnitSubT${i}`).innerHTML = subTotalUnitario;
   calcSubTotalGeneral();
+  calcEnvio();
 }
 
 function calcSubTotalGeneral() {
@@ -171,9 +143,8 @@ function showCartProducts(cart) {
 function remove(i) {
   localStorage.removeItem('Article');
   if (cart.length > 1) {
-    cart.splice(i, 1)
+    cart.splice(i, 1);
     document.getElementById(`item${i}`).remove();
-
   } else {
     document.getElementById(`item${i}`).innerHTML = `
                                                       <div class="p-5">
@@ -192,6 +163,9 @@ document.getElementById('show-card').addEventListener('click', function (e) {
   document.getElementById('inputs-card').classList.replace('d-none', 'd-block');
   document.getElementById('inputs-bank').classList.replace('d-block', 'd-none');
 
+  document.getElementById('cardModalFooter').classList.replace('d-none', 'd-block');
+  document.getElementById('bankModalFooter').classList.replace('d-block', 'd-none');
+
 });
 
 document.getElementById('show-bank').addEventListener('click', function (e) {
@@ -199,13 +173,40 @@ document.getElementById('show-bank').addEventListener('click', function (e) {
   document.getElementById('inputs-bank').classList.replace('d-none', 'd-block');
   document.getElementById('inputs-card').classList.replace('d-block', 'd-none');
 
+  document.getElementById('cardModalFooter').classList.replace('d-block', 'd-none');
+  document.getElementById('bankModalFooter').classList.replace('d-none', 'd-block');
+
+
 });
 
-function payment() {
-  if (cardNum === "" || cardCVV === "" || cardDate === "") {
+function validateCard() {
+  pay = "card";
+}
+
+function validateBank() {
+  pay = "bank";
+}
+
+function paymentCard() {
+  if (pay === "card" && cardNum.value === "" || cardCVV.value === "" || cardDate.value === "") {
+    invalidpaymentmsg.classList.replace('d-none', 'd-block');
     return false;
   } else {
-    invalidmsg.classList.replace('d-block', 'd-none');
+    if (invalidpaymentmsg.classList.contains('d-block')) {
+      invalidpaymentmsg.classList.replace('d-block', 'd-none');
+    }
+    return true;
+  }
+}
+
+function paymentBank() {
+  if (pay === "bank" && bankAcc.value === "") {
+    invalidpaymentmsg.classList.replace('d-none', 'd-block');
+    return false;
+  } else {
+    if (invalidpaymentmsg.classList.contains('d-block')) {
+      invalidpaymentmsg.classList.replace('d-block', 'd-none');
+    }
     return true;
   }
 }
@@ -214,10 +215,41 @@ var ship = document.getElementById('ship-validate');
 
 ship.addEventListener('submit', function (e) {
 
-  if (!ship.checkValidity() || !payment()) {
+  if (!ship.checkValidity() || pay === "" || !paymentCard() || !paymentBank()) {
     e.preventDefault();
     e.stopPropagation();
+  } else {
+    document.getElementById('done').classList.replace('d-none', 'd-block');
   }
   ship.classList.add('was-validated');
-  invalidmsg.classList.replace('d-none', 'd-block');
+});
+
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
+document.addEventListener("DOMContentLoaded", function reload(e) {
+
+  var newArticle = localStorage.getItem('Article');
+
+  getJSONData(CART_INFO2_URL).then(function (result) {
+    if (result.status === "ok") {
+
+      cart = result.data.articles;
+
+      if (newArticle) {
+        let newItem = {
+          nombre: JSON.parse(localStorage.getItem('Article')).nombre,
+          cantidad: JSON.parse(localStorage.getItem('Article')).cantidad,
+          src: JSON.parse(localStorage.getItem('Article')).src,
+          costo: JSON.parse(localStorage.getItem('Article')).costo,
+          moneda: JSON.parse(localStorage.getItem('Article')).moneda
+        }
+        cart.push(newItem);
+      }
+
+      showCartProducts(cart);
+      calcSubTotalGeneral();
+      calcTotal();
+    }
+  })
 });

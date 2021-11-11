@@ -200,7 +200,7 @@ html, body {
   cursor: pointer;
 }
 
-#user {
+#user, #userLg {
   color: white;
 }
 
@@ -286,7 +286,7 @@ html, body {
   width: 190px;
 }
 
-.invalid-msg {
+.invalid {
   color: #dc3545;
 }
 

@@ -58,15 +58,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   let userContainer = document.getElementById('userContainer');
 
+  let userLg = document.getElementById('userLg');
+
   if (userLogged && user) {
 
     userLogged = JSON.parse(userLogged);
 
     user.innerHTML = "Hola, " + userLogged.value;
 
-    user.style = "display: inline-block";
+    user.style = "display: block";
 
-    userContainer.style = "display: inline-block";
+    userContainer.style = "display: block";
+
+    userLg.innerHTML = "Hola, " + userLogged.value;
 
   }
 

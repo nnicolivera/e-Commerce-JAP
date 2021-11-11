@@ -93,7 +93,7 @@ document.getElementById('remove').addEventListener('click', function () {
   if (userName.value === "" && userSurname.value === "" && userBirth.value === "" && userAge.value === "" && userPhone.value === "") {
     document.getElementById('alert').innerHTML = `
                                                   <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                  <small>Su <strong>correo electrónico</strong> no puede quedar vacío, pero puede cambiarlo si lo desea.</small>
+                                                    Su <strong>correo electrónico</strong> no puede quedar vacío, puede cambiarlo si lo desea.
                                                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                   </button>

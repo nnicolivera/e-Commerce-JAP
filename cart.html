@@ -57,15 +57,57 @@
 
 <body>
 
-  <nav class="site-header sticky-top py-1 bg-dark sombra">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div id="userContainer" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false"></a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sombra">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="userContainer" class="nav-item dropdown d-block d-lg-none">
+        <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="cart.html">Ver carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <div class="dropdown-divider"></div>
+          <a id="salir" class="dropdown-item" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarToggler">
+        <a class="navbar-brand" href="inicio.html">Inicio</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+        </ul>
+        <div id="userContainerLg" class="nav-item dropdown d-none d-lg-block">
+          <a class="nav-link dropdown-toggle" href="#" id="userLg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="cart.html">Ver carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <div class="dropdown-divider"></div>
+            <a id="salir" class="dropdown-item" href="index.html">Cerrar sesión</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- <nav class="navbar navbar-expand-lg py-1 bg-dark sombra">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex flex-column flex-md-row justify-content-between collapse navbar-collapse" id="navbar">
+      <a class="py-2 d-none d-md-inline-block nav-item active" href="inicio.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block nav-item" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block nav-item" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block nav-item" href="sell.html">Vender</a>
+      <div id="userContainer" class="nav-item dropdown text-right">
+        <a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="cart.html">Ver carrito</a>
           <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
@@ -74,7 +116,7 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
   <main role="main" class="pb-5">
     <div class="text-center p-4">
@@ -84,11 +126,22 @@
 
     <div class="container">
 
+      
+
       <div id="cart"></div>
+
+      <div id="done" class="d-none">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>¡Compra aprobada!</strong> Estamos preparando su pedido.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
 
       <div id="checkout" class="row bg-check p-3">
         <div class="col-lg-8 mb-5">
-          <h4 class="mt-2">Dirección</h4>
+          <h4 class="mt-2">Dirección de envío</h4>
           <form id="ship-validate" novalidate>
             <div class="form-row">
               <div class="form-group col-4 col-md-4">
@@ -125,8 +178,7 @@
               </div>
               <div class="form-group col-4 col-md-3">
                 <label for="inputZip"></label>
-                <input type="number" class="form-control inputN-no-i" id="inputZip" placeholder="Código postal" min="0"
-                  required>
+                <input type="number" class="form-control inputN-no-i" id="inputZip" placeholder="Código postal" min="0" required>
               </div>
             </div>
             <div class="form-row">
@@ -147,20 +199,19 @@
               <option value="2">Express (5-8 dias, 7%)</option>
               <option value="3">Standard (12-15 dias, 5%)</option>
             </select>
-
         </div>
 
-        <div id="ticket" class="col-md-12 col-lg-4 text-lg-right text-center p-3 ticket sombra"></div>
+        <div id="ticket" class="col-md-12 col-lg-4 text-lg-right text-center mb-5 p-3 ticket sombra"></div>
 
         <div class="col-12 text-center">
-          <div id="invalid-msg" class="invalid-msg d-none mt-5">
-            <p>Debe completar un método de pago</p>
+          <div id="invalid-payment" class="invalid d-none">
+            <p>Debe completar el método de pago</p>
           </div>
           <button class="btn btn-success sombra" type="button" data-toggle="modal" data-target="#exampleModalCenter"
             style="width: 390px;">Método de pago</button>
         </div>
         <div class="col-12 text-center">
-          <button id="" class="btn btn-primary sombra" type="submit" style="width: 390px;">Confirmar compra</button>
+          <button id="submit" class="btn btn-primary sombra" type="submit" style="width: 390px;">Confirmar compra</button>
         </div>
         </form>
       </div>
@@ -181,10 +232,10 @@
               <div class="row">
                 <div class="col-12 text-center">
                   <div class="btn-group mr-5" id="show-card" role="group" aria-label="Second group">
-                    <button type="button" class="btn btn-info w-c">Tarjeta de crédito</button>
+                    <button type="button" class="btn btn-info w-c" onclick="validateCard()">Tarjeta de crédito</button>
                   </div>
                   <div class="btn-group" id="show-bank" role="group" aria-label="Third group">
-                    <button type="button" class="btn btn-info ">Transferencia bancaria</button>
+                    <button type="button" class="btn btn-info" onclick="validateBank()">Transferencia bancaria</button>
                   </div>
                 </div>
                 <!-- TARJETA DE CRÉDITO -->
@@ -216,9 +267,11 @@
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Confirmar</button>
+            <div id="cardModalFooter" class="modal-footer d-none text-right">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="paymentCard()">Confirmar</button>
+            </div>
+            <div id="bankModalFooter" class="modal-footer d-none text-right">
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="paymentBank()">Confirmar</button>
             </div>
           </div>
         </div>
@@ -226,6 +279,7 @@
     </div>
 
   </main>
+  
 
   <footer class="text-muted bg-light">
     <div class="container">

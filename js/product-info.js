@@ -2,8 +2,6 @@ var product1 = [];
 var product2 = [];
 var product3 = [];
 var product4 = [];
-var product = [{product1}, {product2}, {product3}, {product4}];
-
 
 //  Función que se ejecuta una vez que se haya lanzado el evento de
 //  que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -283,7 +281,7 @@ function addToCart() {
         nombre: product1.name,
         cantidad: 1,
         src: product1.images[0],
-        costo: product.cost,
-        moneda: product.currency
+        costo: product1.cost,
+        moneda: product1.currency
     }));
 }
