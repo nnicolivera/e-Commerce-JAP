@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
   let userContainer = document.getElementById('userContainer');
 
-  let userLg = document.getElementById('userLg');
+  let userMD = document.getElementById('userMD');
 
   if (userLogged && user) {
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     userContainer.style = "display: block";
 
-    userLg.innerHTML = "Hola, " + userLogged.value;
+    userMD.innerHTML = "Hola, " + userLogged.value;
 
   }
 
