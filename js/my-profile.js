@@ -9,14 +9,22 @@ var userL = localStorage.getItem('User-Logged');
 userL = JSON.parse(userL);
 userEmail.value = userL.value;
 
+function needLogin() {
+  if (!userL) {
+    window.location = "index.html";
+  }
+}
+needLogin();
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 (function () {
   window.addEventListener('load', function () {
+
     var form = document.getElementById('needs-validation');
     form.addEventListener('submit', function (event) {
-      if (form.checkValidity() === false) {
+      if (!form.checkValidity()) {
         event.preventDefault();
         event.stopPropagation();
       }

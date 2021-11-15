@@ -90,7 +90,7 @@
             <a class="dropdown-item" href="cart.html">Ver carrito</a>
             <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
             <div class="dropdown-divider"></div>
-            <a id="salir" class="dropdown-item" href="index.html">Cerrar sesión</a>
+            <a id="salirMD" class="dropdown-item" href="index.html">Cerrar sesión</a>
           </div>
         </div>
       </div>
@@ -105,18 +105,7 @@
 
     <div class="container">
 
-      
-
       <div id="cart"></div>
-
-      <div id="done" class="d-none">
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong>¡Compra aprobada!</strong> Estamos preparando su pedido.
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
 
       <div id="checkout" class="row bg-check p-3">
         <div class="col-lg-8 mb-5">
@@ -174,9 +163,9 @@
             <br>
             <select class="custom-select" id="inputShippingType" onchange="calcEnvio()" required style="width: 250px;">
               <option value="" selected disabled style="color: rgb(192, 189, 189);">Tipo de envío</option>
-              <option value="1">Premium (2-5 dias, 15%)</option>
-              <option value="2">Express (5-8 dias, 7%)</option>
-              <option value="3">Standard (12-15 dias, 5%)</option>
+              <option value="1">Premium (2-5 dias)</option>
+              <option value="2">Express (5-8 dias)</option>
+              <option value="3">Standard (12-15 dias)</option>
             </select>
         </div>
 
@@ -193,6 +182,15 @@
           <button id="submit" class="btn btn-primary sombra" type="submit" style="width: 390px;">Confirmar compra</button>
         </div>
         </form>
+      </div>
+
+      <div id="done" class="d-none">
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+          <div class="font-italic done-font"><strong>¡Compra aprobada!</strong> Estamos preparando su pedido.</div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       </div>
     </div>
 

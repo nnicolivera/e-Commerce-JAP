@@ -11,113 +11,113 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT1_COMMENTS_URL).then(function (result) {
         if (result.status === "ok") {
             comments = result.data;
-        }
 
-        getJSONData(PRODUCT1_URL).then(function (result) {
-            if (result.status === "ok") {
-
-                product1 = result.data;
-                if (product1.id == JSON.parse(localStorage.getItem("product")).productID) {
-                    comments.forEach(comments => {
-                        showproductInfo(product1, comments);
+            getJSONData(PRODUCT1_URL).then(function (result) {
+                if (result.status === "ok") {
+    
+                    product1 = result.data;
+                    if (product1.id == JSON.parse(localStorage.getItem("product")).productID) {
+                        comments.forEach(comments => {
+                            showproductInfo(product1, comments);
+                        });
+                    }
+    
+                    getJSONData(PRODUCTS_URL).then(function (result) {
+                        if (result.status === "ok") {
+    
+                            let products = result.data;
+                            if (product1.id == JSON.parse(localStorage.getItem("product")).productID) {
+                                showRelatedProducts(products, product1.relatedProducts);
+                            }
+                        }
                     });
                 }
-
-                getJSONData(PRODUCTS_URL).then(function (result) {
-                    if (result.status === "ok") {
-
-                        let products = result.data;
-                        if (product1.id == JSON.parse(localStorage.getItem("product")).productID) {
-                            showRelatedProducts(products, product1.relatedProducts);
-                        }
-                    }
-                });
-            }
-        });
+            });
+        }
     });
 
     getJSONData(PRODUCT2_COMMENTS_URL).then(function (result) {
         if (result.status === "ok") {
             comments = result.data;
-        }
 
-        getJSONData(PRODUCT2_URL).then(function (result) {
-            if (result.status === "ok") {
-
-                product2 = result.data;
-                if (product2.id == JSON.parse(localStorage.getItem("product")).productID) {
-                    comments.forEach(comments => {
-                        showproductInfo(product2, comments);
+            getJSONData(PRODUCT2_URL).then(function (result) {
+                if (result.status === "ok") {
+    
+                    product2 = result.data;
+                    if (product2.id == JSON.parse(localStorage.getItem("product")).productID) {
+                        comments.forEach(comments => {
+                            showproductInfo(product2, comments);
+                        });
+                    }
+    
+                    getJSONData(PRODUCTS_URL).then(function (result) {
+                        if (result.status === "ok") {
+    
+                            let products = result.data;
+                            if (product2.id == JSON.parse(localStorage.getItem("product")).productID) {
+                                showRelatedProducts(products, product2.relatedProducts);
+                            }
+                        }
                     });
                 }
-
-                getJSONData(PRODUCTS_URL).then(function (result) {
-                    if (result.status === "ok") {
-
-                        let products = result.data;
-                        if (product2.id == JSON.parse(localStorage.getItem("product")).productID) {
-                            showRelatedProducts(products, product2.relatedProducts);
-                        }
-                    }
-                });
-            }
-        });
+            });
+        }   
     });
 
     getJSONData(PRODUCT3_COMMENTS_URL).then(function (result) {
         if (result.status === "ok") {
             comments = result.data;
-        }
 
-        getJSONData(PRODUCT3_URL).then(function (result) {
-            if (result.status === "ok") {
-
-                product3 = result.data;
-                if (product3.id == JSON.parse(localStorage.getItem("product")).productID) {
-                    comments.forEach(comments => {
-                        showproductInfo(product3, comments);
+            getJSONData(PRODUCT3_URL).then(function (result) {
+                if (result.status === "ok") {
+    
+                    product3 = result.data;
+                    if (product3.id == JSON.parse(localStorage.getItem("product")).productID) {
+                        comments.forEach(comments => {
+                            showproductInfo(product3, comments);
+                        });
+                    }
+    
+                    getJSONData(PRODUCTS_URL).then(function (result) {
+                        if (result.status === "ok") {
+    
+                            let products = result.data;
+                            if (product3.id == JSON.parse(localStorage.getItem("product")).productID) {
+                                showRelatedProducts(products, product3.relatedProducts);
+                            }
+                        }
                     });
                 }
-
-                getJSONData(PRODUCTS_URL).then(function (result) {
-                    if (result.status === "ok") {
-
-                        let products = result.data;
-                        if (product3.id == JSON.parse(localStorage.getItem("product")).productID) {
-                            showRelatedProducts(products, product3.relatedProducts);
-                        }
-                    }
-                });
-            }
-        });
+            });
+        } 
     });
 
     getJSONData(PRODUCT4_COMMENTS_URL).then(function (result) {
         if (result.status === "ok") {
             comments = result.data;
-        }
 
-        getJSONData(PRODUCT4_URL).then(function (result) {
-            if (result.status === "ok") {
-
-                product4 = result.data;
-                if (product4.id == JSON.parse(localStorage.getItem("product")).productID) {
-                    comments.forEach(comments => {
-                        showproductInfo(product4, comments);
+            getJSONData(PRODUCT4_URL).then(function (result) {
+                if (result.status === "ok") {
+    
+                    product4 = result.data;
+                    if (product4.id == JSON.parse(localStorage.getItem("product")).productID) {
+                        comments.forEach(comments => {
+                            showproductInfo(product4, comments);
+                        });
+                    }
+    
+                    getJSONData(PRODUCTS_URL).then(function (result) {
+                        if (result.status === "ok") {
+    
+                            let products = result.data;
+                            if (product4.id == JSON.parse(localStorage.getItem("product")).productID) {
+                                showRelatedProducts(products, product4.relatedProducts);
+                            }
+                        }
                     });
                 }
-
-                getJSONData(PRODUCTS_URL).then(function (result) {
-                    if (result.status === "ok") {
-
-                        let products = result.data;
-                        if (product4.id == JSON.parse(localStorage.getItem("product")).productID) {
-                            showRelatedProducts(products, product4.relatedProducts);
-                        }
-                    }
-                });
-            }
-        });
+            });
+        }   
     });
 });
 

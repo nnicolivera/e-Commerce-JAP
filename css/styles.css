@@ -290,6 +290,15 @@ html, body {
   color: #dc3545;
 }
 
+.invalid-input {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.done-font {
+  font-size: 2.5ch;
+}
+
 /* MI PERFIL */
 .avatar {
   border-radius: 50%;

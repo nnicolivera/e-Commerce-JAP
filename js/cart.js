@@ -1,16 +1,30 @@
+var ship = document.getElementById('ship-validate');
 var selectShipping = document.getElementById('inputShippingType');
 var cardNum = document.getElementById('inputCardNumber');
 var cardCVV = document.getElementById('inputCardCVV');
 var cardDate = document.getElementById('inputCardDate');
 var bankAcc = document.getElementById('inputBankAccount');
 var invalidpaymentmsg = document.getElementById('invalid-payment');
+var userLog = localStorage.getItem('User-Logged');
 var pay;
+
+var newArticle = localStorage.getItem('Article');
 
 var cart = [];
 var currency = "";
 var subTXUnidad = "";
 var subTGeneral = "";
 var subTotal = "";
+
+// function needLogin() {
+//   if (!userLog) {
+//     localStorage.setItem('login4cart', JSON.stringify ({
+//       from: "cart.html",
+//       msg: "Debes iniciar sesión para usar el carrito."
+//     }));
+//     window.location = "index.html";
+//   }
+// }
 
 function calcSubTotalUnitary(cost, i) {
 
@@ -44,15 +58,19 @@ function calcSubTotalGeneral() {
 
 function calcEnvio() {
   let shipCost = document.getElementById('shipCost');
+  let shipCostP = document.getElementById('shipCostPercentage');
 
   if (selectShipping.value === "1") {
     shipCost.innerHTML = (parseInt(document.getElementById("subTotalGeneral").innerHTML) * 0.15) + " UYU";
+    shipCostP.innerHTML = " <h5><strong>Envío (15%):</strong></h5>"; 
   }
   if (selectShipping.value === "2") {
     shipCost.innerHTML = (parseInt(document.getElementById("subTotalGeneral").innerHTML) * 0.07).toFixed(0) + " UYU";
+    shipCostP.innerHTML = " <h5><strong>Envío (7%):</strong></h5>"; 
   }
   if (selectShipping.value === "3") {
     shipCost.innerHTML = (parseInt(document.getElementById("subTotalGeneral").innerHTML) * 0.05) + " UYU";
+    shipCostP.innerHTML = " <h5><strong>Envío (5%):</strong></h5>"; 
   }
   calcTotal();
 }
@@ -82,7 +100,7 @@ function showCartProducts(cart) {
                   <h6 id="subTotalGeneral"></h6>
                 </div>
                 <div class="col-4 col-lg-12">
-                  <h5><strong>Envío:</strong></h5>
+                  <h5 id="shipCostPercentage"><strong>Envío:</strong></h5>
                   <h6 id="shipCost">Debe seleccionar</h6>
                 </div>
                 <div class="col-4 col-lg-12">
@@ -145,6 +163,7 @@ function remove(i) {
   if (cart.length > 1) {
     cart.splice(i, 1);
     document.getElementById(`item${i}`).remove();
+    showCartProducts(cart);
   } else {
     document.getElementById(`item${i}`).innerHTML = `
                                                       <div class="p-5">
@@ -176,8 +195,20 @@ document.getElementById('show-bank').addEventListener('click', function (e) {
   document.getElementById('cardModalFooter').classList.replace('d-block', 'd-none');
   document.getElementById('bankModalFooter').classList.replace('d-none', 'd-block');
 
-
 });
+
+// function validateQuanity(i) {
+//   let q = document.getElementById(`quantity${i}`);
+//   let quantity = parseInt(document.getElementById(`quantity${i}`).value);
+
+//   if (quantity < 1) {
+//     q.classList.add('invalid-input');
+//     return false; 
+//   } else {
+//     q.classList.remove('invalid-input');
+//     return true;
+//   }
+// }
 
 function validateCard() {
   pay = "card";
@@ -188,37 +219,31 @@ function validateBank() {
 }
 
 function paymentCard() {
-  if (pay === "card" && cardNum.value === "" || cardCVV.value === "" || cardDate.value === "") {
+  if (pay == "card" && (cardNum.value == "" || cardCVV.value == "" || cardDate.value == "")) {
     invalidpaymentmsg.classList.replace('d-none', 'd-block');
     return false;
   } else {
-    if (invalidpaymentmsg.classList.contains('d-block')) {
       invalidpaymentmsg.classList.replace('d-block', 'd-none');
-    }
     return true;
   }
 }
 
 function paymentBank() {
-  if (pay === "bank" && bankAcc.value === "") {
+  if (pay == "bank" && bankAcc.value == "") {
     invalidpaymentmsg.classList.replace('d-none', 'd-block');
     return false;
   } else {
-    if (invalidpaymentmsg.classList.contains('d-block')) {
       invalidpaymentmsg.classList.replace('d-block', 'd-none');
-    }
     return true;
   }
 }
 
-var ship = document.getElementById('ship-validate');
-
 ship.addEventListener('submit', function (e) {
-
-  if (!ship.checkValidity() || pay === "" || !paymentCard() || !paymentBank()) {
-    e.preventDefault();
-    e.stopPropagation();
-  } else {
+  e.preventDefault();
+  e.stopPropagation();
+  if (pay == "" || pay == null || !paymentCard() || !paymentBank()) {
+    invalidpaymentmsg.classList.replace('d-none', 'd-block');
+  } else if (ship.checkValidity()) {
     document.getElementById('done').classList.replace('d-none', 'd-block');
   }
   ship.classList.add('was-validated');
@@ -228,8 +253,6 @@ ship.addEventListener('submit', function (e) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function reload(e) {
-
-  var newArticle = localStorage.getItem('Article');
 
   getJSONData(CART_INFO2_URL).then(function (result) {
     if (result.status === "ok") {

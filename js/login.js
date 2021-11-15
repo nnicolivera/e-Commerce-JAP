@@ -1,42 +1,49 @@
+var form = document.getElementById('needs-validation');
 var inputEmail = document.getElementById("inputEmail");
 var inputPassword = document.getElementById("inputPass");
 var togglePassword = document.getElementById("toggle-password");
+var login4cart = localStorage.getItem('login4cart');
 
-(function () {
-    window.addEventListener('load', function () {
-        var forms = document.getElementsByClassName('needs-validation');
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+    } else {
+        form.classList.add('was-validated');
+        localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
+        window.location = "inicio.html";
+    } 
+});
 
-        var validation = Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                if (form.checkValidity()) {
-                    localStorage.setItem('User-Logged', JSON.stringify({ value: inputEmail.value }));
-                    window.location = "inicio.html";
-                  }
-                  form.classList.add('was-validated');
-                
-            }, false);
-        });
-    }, false);
-
-    togglePassword.addEventListener("click", function showPassword() {
-        if (this.checked) {
-            inputPassword.type = "text";
-        } else {
-            inputPassword.type = "password";
-        }
-        inputPassword.classList.toggle('visible'); 
-    });
-    
-})();
+togglePassword.addEventListener("click", function showPassword() {
+    if (this.checked) {
+        inputPassword.type = "text";
+    } else {
+        inputPassword.type = "password";
+    }
+    inputPassword.classList.toggle('visible'); 
+});
 
 function forgotPassword() {
     document.getElementById('login-inputs').classList.add('d-none');
     
 }
+
+document.addEventListener('DOMContentLoaded', function (e) {
+    
+    if (login4cart) {
+        login4cart = JSON.parse(login4cart);
+        document.getElementById('need-login').innerHTML =` <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                            <strong>¡Oops!</strong> ${login4cart.msg}
+                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            </div>
+                                                        `;
+        localStorage.removeItem('logni4cart');
+    }
+})
 // INICIAR SESIÓN CON GOOGLE (EN PROGRESO)
 // function handleCredentialResponse(response) {
 //     console.log("Encoded JWT ID token: " + response.credential);
